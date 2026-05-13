@@ -1,22 +1,24 @@
 # НИР3
 
-Веб-приложение для рекомендаций учебных курсов (Next.js, NextAuth, Prisma). Репозиторий объединяет исходный код и материалы научно-исследовательской работы.
+Прототип веб-интерфейса платформы курсов с персональными рекомендациями: Next.js (App Router), Prisma, NextAuth.
 
-## Целевой интерфейс
+Макет в Figma: https://www.figma.com/design/XQiGCFwKH7yWHQwnbhJIoK/Untitled?node-id=0-1
 
-Макет в Figma: [Untitled — основной фрейм](https://www.figma.com/design/XQiGCFwKH7yWHQwnbhJIoK/Untitled?node-id=0-1&p=f&t=6IS10DiDLF6HnIBN-0).
-
-## Итоговый отчёт
-
-Файл: [`docs/NIR3-Nikitina-final.pdf`](docs/NIR3-Nikitina-final.pdf).
+Итоговый текст работы: [docs/NIR3-Nikitina-final.pdf](docs/NIR3-Nikitina-final.pdf).
 
 ## Запуск
 
 ```bash
 npm install
-# создайте .env с переменными БД (DATABASE_URL) и NextAuth
+```
+
+В корне нужен файл `.env` с `DATABASE_URL` и переменными NextAuth (`NEXTAUTH_SECRET`, `NEXTAUTH_URL`).
+
+```bash
 npx prisma generate
 npm run dev
 ```
 
 Сборка: `npm run build`.
+
+Дополнительные заметки и черновики лежат в каталоге `addinfo/`.
