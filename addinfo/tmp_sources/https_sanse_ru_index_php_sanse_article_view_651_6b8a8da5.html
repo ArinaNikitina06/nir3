@@ -1,0 +1,1066 @@
+
+	<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<!DOCTYPE html>
+<html lang="ru-RU" xml:lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Концепция подключаемой рекомендательной системы заданий для персонализации образовательного процесса
+							| Системный анализ в науке и образовании
+			</title>
+
+	
+<link rel="icon" href="https://sanse.ru/public/journals/3/favicon_ru_RU.ico">
+<meta name="generator" content="Open Journal Systems 3.2.1.3">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="А. В. Живетьев"/>
+<meta name="DC.Creator.PersonalName" content="М. А. Белов"/>
+<meta name="DC.Creator.PersonalName" content="Н. А. Токарева"/>
+<meta name="DC.Creator.PersonalName" content="Е. Н. Черемисина"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2025-04-24"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-04-21"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2025-04-24"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2025-04-24"/>
+<meta name="DC.Description" xml:lang="en" content="The article discusses the concept of a plug-in recommender system for assignments designed to personalize the educational process. In the context of the digital transformation of education, traditional educational platforms and learning management systems (LMS) often do not provide sufficiently flexible tools to adapt content to the individual needs of students. In response to this issue, the creation of a recommender system is proposed, which integrates with external educational modules, such as simulators, and uses the student's digital profile to analyze their educational needs. The digital profile includes academic data, behavioral patterns, and psycho-physiological indicators, enabling the system to more accurately predict the student's needs and offer appropriate assignments. The article also discusses clustering methods used to group students with similar characteristics and issues related to the system's &quot;cold start.&quot; The described system architecture, based on modularity and scalability, allows for the flexible integration of various educational services and ensures personalized interactions with students. The developed system promises to significantly improve the efficiency of the learning process by enhancing the approach to each student's education."/>
+<meta name="DC.Description" xml:lang="ru" content="В статье рассматривается концепция подключаемой рекомендательной системы заданий, предназначенной для персонализации образовательного процесса. В условиях цифровой трансформации образования традиционные образовательные платформы и системы управления обучением (LMS) часто не предоставляют достаточно гибких инструментов для адаптации контента под индивидуальные потребности студентов. В ответ на эту проблему предлагается создание рекомендательной системы, которая интегрируется с внешними образовательными модулями, такими как тренажеры, и использует цифровой профиль студента для анализа его образовательных потребностей. Цифровой профиль включает академические данные, поведенческие паттерны и психолого-физиологические показатели, что позволяет системе более точно прогнозировать потребности учащегося и предлагать соответствующие задания. Также рассматриваются методы кластеризации, используемые для группировки студентов с похожими характеристиками, и проблемы, связанные с «холодным стартом» системы. Описанная архитектура системы, основанная на модульности и масштабируемости, позволяет гибко интегрировать различные образовательные сервисы и обеспечивать персонализированное взаимодействие с учащимися. Разработанная система обещает значительно повысить эффективность учебного процесса, улучшая подход к обучению каждого студента."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="651"/>
+<meta name="DC.Identifier.pageNumber" content="124-129"/>
+<meta name="DC.Identifier.URI" content="https://sanse.ru/index.php/sanse/article/view/651"/>
+<meta name="DC.Language" scheme="ISO639-1" content="ru"/>
+<meta name="DC.Rights" content="Copyright (c) 2025 "/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by/4.0/"/>
+<meta name="DC.Source" content="Системный анализ в науке и образовании"/>
+<meta name="DC.Source.ISSN" content="2071-9612"/>
+<meta name="DC.Source.Issue" content="1"/>
+<meta name="DC.Source.URI" content="https://sanse.ru/index.php/sanse"/>
+<meta name="DC.Subject" xml:lang="ru" content="интеграция образовательных платформ"/>
+<meta name="DC.Title" content="Концепция подключаемой рекомендательной системы заданий для персонализации образовательного процесса"/>
+<meta name="DC.Title.Alternative" xml:lang="en" content="The concept of a plug-in recommendation system for task personalization in the educational process"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Новые образовательные системы и технологии обучения"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="Системный анализ в науке и образовании"/>
+<meta name="citation_journal_abbrev" content="Системный анализ в науке и образовании"/>
+<meta name="citation_issn" content="2071-9612"/> 
+<meta name="citation_author" content="А. В. Живетьев"/>
+<meta name="citation_author_institution" content="Государственный университет «Дубна», Дубна, Московская область"/>
+<meta name="citation_author" content="М. А. Белов"/>
+<meta name="citation_author_institution" content="Государственный университет «Дубна», Дубна, Московская область"/>
+<meta name="citation_author" content="Н. А. Токарева"/>
+<meta name="citation_author_institution" content="Государственный университет «Дубна», Дубна, Московская область"/>
+<meta name="citation_author" content="Е. Н. Черемисина"/>
+<meta name="citation_author_institution" content="Государственный университет «Дубна», Дубна, Московская область"/>
+<meta name="citation_title" content="Концепция подключаемой рекомендательной системы заданий для персонализации образовательного процесса"/>
+<meta name="citation_language" content="ru"/>
+<meta name="citation_date" content="2025/04/24"/>
+<meta name="citation_issue" content="1"/>
+<meta name="citation_firstpage" content="124"/>
+<meta name="citation_lastpage" content="129"/>
+<meta name="citation_abstract_html_url" content="https://sanse.ru/index.php/sanse/article/view/651"/>
+<meta name="citation_keywords" xml:lang="ru" content="рекомендательная система"/>
+<meta name="citation_keywords" xml:lang="ru" content="персонализация обучения"/>
+<meta name="citation_keywords" xml:lang="ru" content="подбор задач"/>
+<meta name="citation_keywords" xml:lang="ru" content="цифровой профиль"/>
+<meta name="citation_keywords" xml:lang="ru" content="образовательный процесс"/>
+<meta name="citation_keywords" xml:lang="ru" content="кластеризация"/>
+<meta name="citation_keywords" xml:lang="ru" content="адаптивное обучение"/>
+<meta name="citation_keywords" xml:lang="ru" content="цифровая трансформация образования"/>
+<meta name="citation_keywords" xml:lang="ru" content="интеграция образовательных платформ"/>
+<meta name="citation_pdf_url" content="https://sanse.ru/index.php/sanse/article/download/651/618"/>
+<meta name="citation_reference" content="Брюховецкий, А. А. Разработка рекомендательной системы в сфере онлайн-образования / А. А. Брюховецкий, Е. Н. Мащенко, М. А. Журавель // Перспективные направления развития отечественных информационных технологий : Материалы IХ Всероссийской научно-практической конференции, Севастополь, 19–23 сентября 2023 года. – Севастополь: Севастопольский государственный университет, 2023. – С. 360-370. – EDN: CINQZB."/>
+<meta name="citation_reference" content="Токтарова, В. И. Алгоритмы персонализации: виды рекомендаций в цифровых системах обучения / В. И. Токтарова, О. Г. Казанцева // Информация и образование: границы коммуникаций. – 2024. – № 16(24). – С. 74-75. – EDN: LUTEVN."/>
+<meta name="citation_reference" content="Живетьев, А. В. Адаптивная выдача учебно-методических материалов на основе моделей нейролингвистического программирования по результатам оценки позы учащегося за компьютером или в аудитории средствами машинного обучения / А. В. Живетьев, М. А. Белов // Computational Nanotechnology. – 2024. – Т. 11, № 3. – С. 81-88. – DOI: 10.33693/2313-223X-2024-11-3-81-88. – EDN: QIUKZS."/>
+<meta name="citation_reference" content="Живетьев, А. В. Проблемы управления индивидуальной образовательной траекторией студента на основе цифрового профиля и цифрового следа / А. В. Живетьев, М. А. Белов // Системный анализ в науке и образовании. – 2024. – № 4. – С. 37-44. – EDN: HHKRWA."/>
+<meta name="citation_reference" content="Живетьев, А. В. Агломеративная иерархическая кластеризация студентов на основе цифровых профилей с учетом категориальных данных / А. В. Живетьев, М. А. Белов // Автоматизация. Современные технологии. – 2025. – Т. 79, № 4. – C. 185-192. – DOI: 10.36652/0869-4931-2025-79-4-185-192. – EDN: XGFSNL."/>
+<meta name="citation_reference" content="Медведская, Ю. И. Реализация алгоритма маппинга объектов передачи данных в базовые сущности программы / Ю. И. Медведская // Электронные системы и технологии : Материалы 59-й научной конференции аспирантов, магистрантов и студентов БГУИР, Минск, 17–21 апреля 2023 года. – Минск: Научное электронное издание, 2023. – С. 246-248. – EDN: ODOUEM"/>
+	<link rel="stylesheet" href="https://sanse.ru/index.php/sanse/$$$call$$$/page/page/css?name=bootstrapTheme-cerulean" type="text/css" />
+</head>
+<body class="pkp_page_article pkp_op_view">
+	<div class="pkp_structure_page">
+
+		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="Быстрый переход к содержимому">
+			<ul>
+			  <li><a href="#main-navigation">Главная навигационная панель</a></li>
+			  <li><a href="#main-content">Основное содержимое</a></li>
+			  <li><a href="#sidebar">Боковая панель</a></li>
+			</ul>
+		</nav>
+
+				<header style="background-image: url('https://sanse.ru/files/back.png ');background-size:100% 100%;" 
+		class="navbar navbar-default" 
+		id="headerNavigationContainer" 
+		role="banner">
+
+						<div style="background-image: url('https://sanse.ru/files/logo.png ');background-repeat: no-repeat;alt='Open Journal Systems' ;background-position: right 10% top 50px;">
+
+																<div class="container site-name hidden-lg">
+																<p>Журнал</p>
+					<a href="					https://sanse.ru/index.php/sanse/index
+				" class="navbar-brand padd">Системный анализ в науке и образовании</a>
+											</div>
+						<div class="container-fluid">
+
+				<div class="navbar-header">
+
+										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="nav-menu">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+								
+								
+									<nav id="nav-menu" class="navbar-collapse collapse" aria-label="Навигация сайта">
+																		<ul id="main-navigation" class="nav navbar-nav">
+			
+														<li class="">
+				<a href="https://sanse.ru/index.php/sanse/issue/current">
+					Текущий выпуск
+									</a>
+				
+							</li>
+														<li class="">
+				<a href="https://sanse.ru/index.php/sanse/issue/archive">
+					Архивы
+									</a>
+				
+							</li>
+														<li class="">
+				<a href="https://sanse.ru/index.php/sanse/announcement">
+					Объявления
+									</a>
+				
+							</li>
+																					<li class=" dropdown">
+				<a href="https://sanse.ru/index.php/sanse/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					О нас
+											<span class="caret"></span>
+									</a>
+				
+									<ul class="dropdown-menu ">
+																					<li class="">
+									<a href="https://sanse.ru/index.php/sanse/about">
+										О журнале
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://sanse.ru/index.php/sanse/about/submissions">
+										Отправка статьи
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://sanse.ru/index.php/sanse/about/editorialTeam">
+										Редакция
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://sanse.ru/index.php/sanse/about/privacy">
+										Заявление о конфиденциальности
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://sanse.ru/index.php/sanse/about/contact">
+										Контакты
+									</a>
+								</li>
+																		</ul>
+							</li>
+				
+	</ul>
+
+				
+													 
+													
+																											<ul class="nav navbar-nav pull-right-lg nav navbar-nav">
+  <li>
+    <a href="https://sanse.ru/index.php/sanse/search"><span style='height:20px;' class="glyphicon glyphicon-search" ></a>
+  </li>
+</ul>
+								<ul class="nav navbar-nav pull-right-lg" >
+  <li class="">
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-globe">
+          </span> 
+	        <span class="caret">
+            </span>
+				</a>
+				<ul class="dropdown-menu ">
+						<li class="">
+							<a href="https://sanse.ru/index.php/sanse/user/setLocale/ru_RU">RU</a>
+						</li>
+						<li>
+              <a href="https://sanse.ru/index.php/sanse/user/setLocale/en_US">EN</a>
+            </li>
+					</ul>
+			</li>
+</ul>
+
+																				<ul id="navigationUser" class="nav navbar-nav  pull-right-lg">
+			
+														<li class="">
+				<a href="https://sanse.ru/index.php/sanse/user/register">
+					Регистрация
+									</a>
+				
+							</li>
+														<li class="">
+				<a href="https://sanse.ru/index.php/sanse/login">
+					Вход
+									</a>
+				
+							</li>
+											
+	</ul>
+
+					</nav>
+				
+			</div><!-- .pkp_head_wrapper -->
+							<div class="container site-name visible-lg">
+																<p>Журнал</p>
+					<a href="					https://sanse.ru/index.php/sanse/index
+				" class="navbar-brand padd">Системный анализ в науке и образовании</a>
+											</div>
+					</header><!-- .pkp_structure_head -->
+
+				<div class="pkp_structure_content container">
+			<main class="pkp_structure_main col-md-8 col-sm-12 col-xs-12" role="main">
+<style>
+
+@media (min-width: 1200px) {
+    .pull-right-lg {
+        float: right;
+    }
+	.container-fluid{
+	max-width: 70%;
+	margin-left:0;
+	}
+	#main-navigation:first-child{
+		margin-left: calc(calc(100vw - 1140px) / 2);
+
+	}
+}
+@media (min-width: 992px){
+	.container-l {
+		margin-right: calc(calc(100% - 940px) / 2);
+	}
+}
+@media (min-width: 1200px){
+	.container-l {
+		margin-right: calc(calc(100% - 1140px) / 2);
+	}
+}
+
+@media (min-width: 768px){
+	.container-l {
+		margin-right: calc(calc(100% - 720px) / 2);
+	}
+}
+</style>
+
+
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="Вы здесь:">
+	<ol class="breadcrumb">
+		<li>
+			<a href="https://sanse.ru/index.php/sanse/index">
+				Главная
+			</a>
+		</li>
+		<li>
+			<a href="https://sanse.ru/index.php/sanse/issue/archive">
+				Архивы
+			</a>
+		</li>
+		<li>
+			<a href="https://sanse.ru/index.php/sanse/issue/view/77">
+				№ 1 (2025)
+			</a>
+		</li>
+		<li class="active">
+							Новые образовательные системы и технологии обучения
+					</li>
+	</ol>
+</nav>
+	
+		<article class="article-details">
+
+		
+	<header>
+		<h1 class="page-header">
+			Концепция подключаемой рекомендательной системы заданий для персонализации образовательного процесса
+					</h1>
+	</header>
+
+	<div class="row">
+
+		<section class="article-sidebar">
+
+						<h2 class="sr-only">Боковая панель статьи</h2>
+
+										<div class="cover-image">
+											<a href="https://sanse.ru/index.php/sanse/issue/view/77">
+							<img
+								class="img-responsive"
+								src="https://sanse.ru/public/journals/3/cover_issue_77_ru_RU.png"
+								alt=""
+							>
+						</a>
+									</div>
+			
+										<div class="download">
+																		
+	
+		
+
+<a class="galley-link btn btn-primary pdf" role="button" href="https://sanse.ru/index.php/sanse/article/view/651/618">
+
+		
+	PDF
+
+	</a>
+																				</div>
+			
+			<div class="list-group">
+
+													<div class="list-group-item date-published">
+												<strong>Опубликован:</strong>
+						апр 24, 2025
+					</div>
+																								
+																																																	
+													<div class="list-group-item keywords">
+						<strong>							Ключевые слова:</strong>
+						<div class="">
+								<span class="value">
+																														рекомендательная система, 																					персонализация обучения, 																					подбор задач, 																					цифровой профиль, 																					образовательный процесс, 																					кластеризация, 																					адаптивное обучение, 																					цифровая трансформация образования, 																					интеграция образовательных платформ																																								recommender system, 																					personalized learning, 																					task selection, 																					digital profile, 																					educational process, 																					clustering, 																					adaptive learning, 																					digital transformation of education, 																					integration of educational platforms																											</span>
+						</div>
+					</div>
+							</div>
+
+		</section><!-- .article-sidebar -->
+
+		<div class="col-md-8">
+			<section class="article-main">
+
+								<h2 class="sr-only">Основное содержимое статьи</h2>
+
+									<div class="authors">
+													<div class="author">
+								<strong>А. В. Живетьев</strong>
+																	<div class="article-author-affilitation">
+										Государственный университет «Дубна», Дубна, Московская область
+									</div>
+																							</div>
+													<div class="author">
+								<strong>М. А. Белов</strong>
+																	<div class="article-author-affilitation">
+										Государственный университет «Дубна», Дубна, Московская область
+									</div>
+																							</div>
+													<div class="author">
+								<strong>Н. А. Токарева</strong>
+																	<div class="article-author-affilitation">
+										Государственный университет «Дубна», Дубна, Московская область
+									</div>
+																							</div>
+													<div class="author">
+								<strong>Е. Н. Черемисина</strong>
+																	<div class="article-author-affilitation">
+										Государственный университет «Дубна», Дубна, Московская область
+									</div>
+																							</div>
+											</div>
+				
+													<div class="article-summary" id="summary">
+						<h2>Аннотация</h2>
+						<div class="article-abstract">
+							<p>В статье рассматривается концепция подключаемой рекомендательной системы заданий, предназначенной для персонализации образовательного процесса. В условиях цифровой трансформации образования традиционные образовательные платформы и системы управления обучением (LMS) часто не предоставляют достаточно гибких инструментов для адаптации контента под индивидуальные потребности студентов. В ответ на эту проблему предлагается создание рекомендательной системы, которая интегрируется с внешними образовательными модулями, такими как тренажеры, и использует цифровой профиль студента для анализа его образовательных потребностей. Цифровой профиль включает академические данные, поведенческие паттерны и психолого-физиологические показатели, что позволяет системе более точно прогнозировать потребности учащегося и предлагать соответствующие задания. Также рассматриваются методы кластеризации, используемые для группировки студентов с похожими характеристиками, и проблемы, связанные с «холодным стартом» системы. Описанная архитектура системы, основанная на модульности и масштабируемости, позволяет гибко интегрировать различные образовательные сервисы и обеспечивать персонализированное взаимодействие с учащимися. Разработанная система обещает значительно повысить эффективность учебного процесса, улучшая подход к обучению каждого студента.</p>
+						</div>
+					</div>
+				
+				<div class="item downloads_chart">
+	<h3 class="label">
+		Скачивания
+	</h3>
+	<div class="value">
+		<canvas class="usageStatsGraph" data-object-type="Submission" data-object-id="651"></canvas>
+		<div class="usageStatsUnavailable" data-object-type="Submission" data-object-id="651">
+			Данные скачивания пока недоступны.
+		</div>
+	</div>
+</div>
+
+
+			</section><!-- .article-main -->
+
+			<section class="article-more-details">
+
+								<h2 class="sr-only">Информация о статье</h2>
+
+													<div class="panel panel-default how-to-cite">
+						<div class="panel-heading">
+							Как цитировать
+						</div>
+						<div class="panel-body">
+							<div id="citationOutput" role="region" aria-live="polite">
+								<div class="csl-bib-body">
+  <div class="csl-entry"><div class="csl-left-margin">[1]</div><div class="csl-right-inline">Живетьев, А.В., Белов, М.А., Токарева, Н.А. и Черемисина, Е.Н. 2025. Концепция подключаемой рекомендательной системы заданий для персонализации образовательного процесса. <i>Системный анализ в науке и образовании</i>. 1 (апр. 2025), 124–129.</div></div>
+</div>
+							</div>
+							<div class="btn-group">
+							  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-controls="cslCitationFormats">
+							    Другие форматы библиографических ссылок
+									<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/acm-sig-proceedings?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/acm-sig-proceedings?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												ACM
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/acs-nano?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/acs-nano?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												ACS
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/apa?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/apa?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												APA
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												ABNT
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/chicago-author-date?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/chicago-author-date?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												Chicago
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/harvard-cite-them-right?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/harvard-cite-them-right?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												Harvard
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/ieee?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/ieee?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												IEEE
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/modern-language-association?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/modern-language-association?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												MLA
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												Turabian
+											</a>
+										</li>
+																			<li>
+											<a
+												aria-controls="citationOutput"
+												href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/vancouver?submissionId=651&amp;publicationId=667"
+												data-load-citation
+												data-json-href="https://sanse.ru/index.php/sanse/citationstylelanguage/get/vancouver?submissionId=651&amp;publicationId=667&amp;return=json"
+											>
+												Vancouver
+											</a>
+										</li>
+																  </ul>
+							</div>
+						</div>
+					</div>
+				
+																																																	
+								<div class="panel panel-default issue">
+					<div class="panel-heading">
+						Выпуск
+					</div>
+					<div class="panel-body">
+						<a class="title" href="https://sanse.ru/index.php/sanse/issue/view/77">
+							№ 1 (2025)
+						</a>
+
+					</div>
+				</div>
+
+									<div class="panel panel-default section">
+						<div class="panel-heading">
+							Раздел
+						</div>
+						<div class="panel-body">
+							Новые образовательные системы и технологии обучения
+						</div>
+					</div>
+				
+													<div class="panel panel-default copyright">
+						<div class="panel-body">
+																								<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Лицензия Creative Commons" src="//i.creativecommons.org/l/by/4.0/88x31.png" /></a><p>Это произведение доступно по <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">лицензии Creative Commons «Attribution» («Атрибуция») 4.0 Всемирная</a>.</p>
+																						
+						</div>
+					</div>
+				
+																																																				
+				<div class="item addthis">
+	<div class="value">
+		<!-- AddThis Button BEGIN -->
+		 			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+				<!-- AddThis Button END -->
+	</div>
+</div>
+
+
+													<div class="article-references">
+						<h2>Библиографические ссылки</h2>
+						<div class="article-references-content">
+																								<p>Брюховецкий, А. А. Разработка рекомендательной системы в сфере онлайн-образования / А. А. Брюховецкий, Е. Н. Мащенко, М. А. Журавель // Перспективные направления развития отечественных информационных технологий : Материалы IХ Всероссийской научно-практической конференции, Севастополь, 19–23 сентября 2023 года. – Севастополь: Севастопольский государственный университет, 2023. – С. 360-370. – EDN: CINQZB. </p>
+																	<p>Токтарова, В. И. Алгоритмы персонализации: виды рекомендаций в цифровых системах обучения / В. И. Токтарова, О. Г. Казанцева // Информация и образование: границы коммуникаций. – 2024. – № 16(24). – С. 74-75. – EDN: LUTEVN. </p>
+																	<p>Живетьев, А. В. Адаптивная выдача учебно-методических материалов на основе моделей нейролингвистического программирования по результатам оценки позы учащегося за компьютером или в аудитории средствами машинного обучения / А. В. Живетьев, М. А. Белов // Computational Nanotechnology. – 2024. – Т. 11, № 3. – С. 81-88. – DOI: 10.33693/2313-223X-2024-11-3-81-88. – EDN: QIUKZS. </p>
+																	<p>Живетьев, А. В. Проблемы управления индивидуальной образовательной траекторией студента на основе цифрового профиля и цифрового следа / А. В. Живетьев, М. А. Белов // Системный анализ в науке и образовании. – 2024. – № 4. – С. 37-44. – EDN: HHKRWA. </p>
+																	<p>Живетьев, А. В. Агломеративная иерархическая кластеризация студентов на основе цифровых профилей с учетом категориальных данных / А. В. Живетьев, М. А. Белов // Автоматизация. Современные технологии. – 2025. – Т. 79, № 4. – C. 185-192. – DOI: 10.36652/0869-4931-2025-79-4-185-192. – EDN: XGFSNL. </p>
+																	<p>Медведская, Ю. И. Реализация алгоритма маппинга объектов передачи данных в базовые сущности программы / Ю. И. Медведская // Электронные системы и технологии : Материалы 59-й научной конференции аспирантов, магистрантов и студентов БГУИР, Минск, 17–21 апреля 2023 года. – Минск: Научное электронное издание, 2023. – С. 246-248. – EDN: ODOUEM </p>
+																					</div>
+					</div>
+				
+			</section><!-- .article-details -->
+		</div><!-- .col-md-8 -->
+	</div><!-- .row -->
+
+</article>
+
+	<div id="articlesBySameAuthorList">
+						<h3>Наиболее читаемые статьи этого автора (авторов)</h3>
+
+			<ul>
+																													<li>
+													С. В. Ульянов,
+													Г. П. Решетников,
+													И. А. Бархатова,
+													В. А. Албу,
+													А. Н. Аверкин,
+													Н. А. Токарева,
+												<a href="https://sanse.ru/index.php/sanse/article/view/347">
+							Квантовая релятивистская информатика. Ч. 1: модели физических объектов и квантовые релятивистские эффекты в интеллектуальных вычислениях
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/31">
+							Системный анализ в науке и образовании: № 4 (2013): №4 (2013)
+						</a>
+					</li>
+																													<li>
+													С. В. Ульянов,
+													Г. П. Решетников,
+													Н. А. Токарева,
+													О. А. Крейдер,
+												<a href="https://sanse.ru/index.php/sanse/article/view/116">
+							Интеллектуальные системы управления физическими и логическими экспериментами.ч.1: логика непротиворечивости и корректность аппроксимации формализуемых физических моделей – расчетные и математические модели объектов
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/28">
+							Системный анализ в науке и образовании: № 1 (2013): №1 (2013)
+						</a>
+					</li>
+																													<li>
+													М. А. Белов ,
+													С. И. Гришко ,
+													К. Н. Жаткина ,
+													Е. Ю. Кирпичева ,
+													О. А. Крейдер ,
+													М. В. Лишилин ,
+													П. А. Митрошин ,
+													С. В. Потёмкина ,
+													Н. А. Токарева ,
+													О. Ю. Тятюшкина ,
+													Е. Н. Черемисина ,
+												<a href="https://sanse.ru/index.php/sanse/article/view/511">
+							Новая методология дистанционного обучения для эффективного формирования профессиональных компетенций цифровой трансформации: кибернетический подход, экосистемное мышление, виртуальные лаборатории, микрообучение, коллективное инженерное творчество, акцент 
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/64">
+							Системный анализ в науке и образовании: № 4 (2021): № 4 (2021)
+						</a>
+					</li>
+																													<li>
+													В. В. Кореньков,
+													Д. И. Пряхина,
+													О. И. Стрельцова,
+													П. П.  Сычёв,
+													Е. Н. Черемисина,
+												<a href="https://sanse.ru/index.php/sanse/article/view/162">
+							Концепция и реализация образовательной программы международной школы по информационным технологиям «Аналитика больших данных» в государственном университете «Дубна»
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/58">
+							Системный анализ в науке и образовании: № 3 (2020): №3 (2020)
+						</a>
+					</li>
+																													<li>
+													А. В. Живетьев,
+													М. А. Белов,
+												<a href="https://sanse.ru/index.php/sanse/article/view/634">
+							Проблемы управления индивидуальной образовательной траекторией студента на основе цифрового профиля и цифрового следа
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/76">
+							Системный анализ в науке и образовании: № 4 (2024)
+						</a>
+					</li>
+																													<li>
+													А. В. Родионов,
+													М. А. Белов,
+													М. В. Балашова,
+												<a href="https://sanse.ru/index.php/sanse/article/view/569">
+							Моделирование сложных организационных систем с применением новейших программно-инструментальных средств на примере хэндлинговой компании в открытой облачной среде на базе виртуальной компьютерной лаборатории
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/69">
+							Системный анализ в науке и образовании: № 1 (2023)
+						</a>
+					</li>
+																													<li>
+													Е. Н. Черемисина,
+													Т. В. Костылева,
+													Е. Ю. Кирпичева,
+												<a href="https://sanse.ru/index.php/sanse/article/view/602">
+							Методика постановки и решения слабоформализованных геологических задач
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/73">
+							Системный анализ в науке и образовании: № 1 (2024)
+						</a>
+					</li>
+																													<li>
+													Е. Н. Черемисина,
+													М. В. Лишилин,
+													М. А. Белов ,
+												<a href="https://sanse.ru/index.php/sanse/article/view/147">
+							Интеграция виртуальной компьютерной лаборатории и знаниевого пространства – новый взгляд на подготовку высококвалифицированных ит-специалистов 
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/32">
+							Системный анализ в науке и образовании: № 1 (2014): №1 (2014)
+						</a>
+					</li>
+																													<li>
+													Е. Н. Черемисина,
+													В. Н. Добрынин,
+												<a href="https://sanse.ru/index.php/sanse/article/view/202">
+							Подходы к исследованию знаний в системе дистанционного обучения
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/10">
+							Системный анализ в науке и образовании: № 2 (2008): №2 (2008)
+						</a>
+					</li>
+																													<li>
+													Е. Н. Черемисина,
+													А. Е. Сеннер,
+													Е. Ю. Кирпичева,
+												<a href="https://sanse.ru/index.php/sanse/article/view/342">
+							ГРИД технологии в решении задач обработки геологических и геофизических данных
+						</a>,
+						<a href="https://sanse.ru/index.php/sanse/issue/view/30">
+							Системный анализ в науке и образовании: № 3 (2013): №3 (2013)
+						</a>
+					</li>
+							</ul>
+			<div id="articlesBySameAuthorPages">
+				<strong>1</strong>&nbsp;<a href="https://sanse.ru/index.php/sanse/article/view/651?articlesBySameAuthorPage=2#articlesBySameAuthor">2</a>&nbsp;<a href="https://sanse.ru/index.php/sanse/article/view/651?articlesBySameAuthorPage=2#articlesBySameAuthor">&gt;</a>&nbsp;<a href="https://sanse.ru/index.php/sanse/article/view/651?articlesBySameAuthorPage=2#articlesBySameAuthor">&gt;&gt;</a>&nbsp;
+			</div>
+			</div>
+
+
+</div><!-- .page -->
+
+</main>
+
+
+<aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-4" role="complementary"
+	aria-label="Боковая панель">
+	<div class="pkp_block block_make_submission">
+	<h2 class="pkp_screen_reader">
+		Отправить материал
+	</h2>
+
+	<div class="content">
+		<a class="block_make_submission_link" href="https://sanse.ru/index.php/sanse/about/submissions">
+			Отправить материал
+		</a>
+	</div>
+</div>
+<div class="pkp_block block_Keywordcloud">
+	<h2 class="title">Ключевые слова</h2>
+	<div class="content" id='wordcloud'></div>
+
+	<script>
+		function randomColor() {
+			var colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
+			return colors[Math.floor(Math.random()*colors.length)];
+		}
+
+					document.addEventListener("DOMContentLoaded", function() {
+				var keywords = [{"text":"\u043c\u0430\u043b\u044b\u0439 \u0438 \u0441\u0440\u0435\u0434\u043d\u0438\u0439 \u0431\u0438\u0437\u043d\u0435\u0441","size":1},{"text":"\u043d\u0435\u043f\u043e\u0434\u0432\u0438\u0436\u043d\u0430\u044f \u0438 \u043f\u043e\u0434\u0432\u0438\u0436\u043d\u0430\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442 \u0441\u043e\u043f\u0440\u044f\u0433\u0430\u0435\u043c\u044b\u0445 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0435\u0439","size":1},{"text":"\u0441\u0443\u0434\u0435\u0431\u043d\u0430\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u0430","size":1},{"text":"\u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442","size":1},{"text":"\u043d\u0430\u0443\u0447\u043d\u0430\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u044f","size":1},{"text":"\u0434\u0440\u043e\u0431\u043d\u043e\u0435 \u0438\u0441\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0435","size":1},{"text":"\u043a\u0432\u0430\u043d\u0442\u043e\u0432\u044b\u0435 \u043c\u044f\u0433\u043a\u0438\u0435 \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f","size":1},{"text":"\u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0442\u043e\u0440 \u0437\u043d\u0430\u043d\u0438\u0439","size":1},{"text":"\u0441\u0442\u0440\u043e\u0431\u043e\u0441\u043a\u043e\u043f\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u043e\u0431\u043e\u0442-\u043c\u0430\u043d\u0438\u043f\u0443\u043b\u044f\u0442\u043e\u0440","size":1},{"text":"\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u044b\u0435 \u0446\u0435\u043f\u0438 \u043d\u0435\u0434\u0435\u0444\u043e\u0440\u043c\u0438\u0440\u0443\u0435\u043c\u044b\u0445 \u0438\u0437\u0434\u0435\u043b\u0438\u0439 \u0441 \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u044f\u043c\u0438","size":1},{"text":"\u043f\u043e\u0433\u0440\u0435\u0448\u043d\u043e\u0441\u0442\u044c \u0441\u043e\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u044f \u043d\u0435\u0434\u0435\u0444\u043e\u0440\u043c\u0438\u0440\u0443\u0435\u043c\u044b\u0445 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0435\u0439","size":1},{"text":"\u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0442\u043e\u0447\u0435\u043a \u043a\u043e\u043d\u0442\u0430\u043a\u0442\u0430 \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043d\u0435\u043f\u043e\u0434\u0432\u0438\u0436\u043d\u043e\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442","size":1},{"text":"\u0442\u043e\u0447\u043a\u0438 \u043a\u043e\u043d\u0442\u0430\u043a\u0442\u0430","size":1},{"text":"\u0441\u043e\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u0435 \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0445 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0435\u0439","size":1},{"text":"\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0436\u0438\u0437\u043d\u0438","size":1},{"text":"smo","size":1},{"text":"\u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u043d\u0430\u044f \u0440\u0435\u043a\u043b\u0430\u043c\u0430","size":1},{"text":"seo","size":1},{"text":"\u043f\u043e\u0438\u0441\u043a\u043e\u0432\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b","size":1},{"text":"\u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0446\u0438\u044f \u0441\u0430\u0439\u0442\u043e\u0432","size":1},{"text":"\u043c\u0435\u0442\u043e\u0434\u044b \u043f\u0440\u043e\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u0441\u0430\u0439\u0442\u043e\u0432","size":1},{"text":"\u0410\u0426\u041f","size":1},{"text":"\u043c\u0438\u043a\u0440\u043e\u043a\u043e\u043d\u0442\u0440\u043e\u043b\u043b\u0435\u0440","size":1},{"text":"\u0434\u0430\u0442\u0447\u0438\u043a\u0438 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u044b","size":1},{"text":"\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u043d\u043e\u0433\u043e \u0432\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f","size":1},{"text":"\u0441\u0432\u0435\u0440\u0445\u043f\u0440\u043e\u0432\u043e\u0434\u044f\u0449\u0438\u0439 \u0441\u043e\u043b\u0435\u043d\u043e\u0438\u0434","size":1},{"text":"\u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0435 \u043f\u0440\u0430\u0432\u043e\u0441\u0443\u0434\u0438\u0435","size":1},{"text":"\u0436\u0438\u043b\u0438\u0449\u043d\u043e\u2013\u043a\u043e\u043c\u043c\u0443\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u0445\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u043e","size":1},{"text":"\u0443\u044f\u0437\u0432\u0438\u043c\u043e\u0441\u0442\u0438 web-\u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432","size":1},{"text":"\u043c\u0435\u0442\u043e\u0434\u044b \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044f","size":1},{"text":"\u0438\u043d\u0442\u0435\u043d\u0441\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0433\u0430\u043c\u043c\u0430 \u0438\u0437\u043b\u0443\u0447\u0435\u043d\u0438\u044f","size":1},{"text":"\u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u0432","size":1},{"text":"\u0431\u0430\u043d\u0447\u0435\u0440","size":1},{"text":"\u0442\u0440\u0435\u043a\u043e\u0432\u0430\u044f \u043c\u0435\u043c\u0431\u0440\u0430\u043d\u0430","size":1},{"text":"\u043c\u0430\u0433\u043d\u0438\u0442\u043d\u043e\u0435 \u043f\u043e\u043b\u0435","size":1},{"text":"\u0446\u0438\u043a\u043b\u043e\u0442\u0440\u043e\u043d","size":1},{"text":"\u0443\u0441\u043a\u043e\u0440\u0438\u0442\u0435\u043b\u044c \u0437\u0430\u0440\u044f\u0436\u0435\u043d\u043d\u044b\u0445 \u0447\u0430\u0441\u0442\u0438\u0446","size":1},{"text":"\u0437\u0430\u0434\u0430\u0447\u0438 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f","size":1},{"text":"\u043e\u0446\u0435\u043d\u043a\u0430 \u0441\u043b\u043e\u0436\u043d\u043e\u0441\u0442\u0438","size":1},{"text":"\u0437\u0430\u0434\u0430\u0447\u0430 \u0443\u043f\u043e\u0440\u044f\u0434\u043e\u0447\u0435\u043d\u0438\u044f","size":1},{"text":"\u0437\u0430\u0434\u0430\u0447\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f","size":1},{"text":"\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u044b\u0439 \u0443\u0447\u0435\u0431\u043d\u0438\u043a","size":1},{"text":"\u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435","size":1},{"text":"\u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043f\u043e\u0442\u0440\u0435\u0431\u043b\u0435\u043d\u0438\u044f","size":1},{"text":"data mining","size":1},{"text":"\u044d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430","size":1},{"text":"\u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0439 \u043f\u0443\u043b\u044c\u0442","size":1},{"text":"\u043c\u043e\u043b\u0435\u043a\u0443\u043b\u044f\u0440\u043d\u0430\u044f \u0434\u0438\u043d\u0430\u043c\u0438\u043a\u0430","size":1},{"text":"\u043d\u0430\u0442\u0443\u0440\u043d\u044b\u0439 \u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442","size":1},{"text":"\u0440\u0435\u0448\u0435\u043d\u0438\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0439","size":1}];
+				var totalWeight = 0;
+				var width = 300;
+				var height = 200;
+				var transitionDuration = 200;
+				var length_keywords = keywords.length;
+				var layout = d3.layout.cloud();
+
+				layout.size([width, height])
+					.words(keywords)
+					.fontSize(function(d)
+					{
+						return fontSize(+d.size);
+					})
+					.on('end', draw);
+
+				var svg = d3.select("#wordcloud").append("svg")
+					.attr("viewBox", "0 0 " + width + " " + height)
+					.attr("width", '100%');
+
+				function update() {
+					var words = layout.words();
+					fontSize = d3.scaleLinear().range([16, 34]);
+					if (words.length) {
+						fontSize.domain([+words[words.length - 1].size || 1, +words[0].size]);
+					}
+				}
+
+				keywords.forEach(function(item,index){totalWeight += item.size;});
+
+				update();
+
+				function draw(words, bounds) {
+					var w = layout.size()[0],
+						h = layout.size()[1];
+
+					scaling = bounds
+						? Math.min(
+							w / Math.abs(bounds[1].x - w / 2),
+							w / Math.abs(bounds[0].x - w / 2),
+							h / Math.abs(bounds[1].y - h / 2),
+							h / Math.abs(bounds[0].y - h / 2),
+						) / 2
+						: 1;
+
+					svg
+					.append("g")
+					.attr(
+						"transform",
+						"translate(" + [w >> 1, h >> 1] + ")scale(" + scaling + ")",
+					)
+					.selectAll("text")
+						.data(words)
+					.enter().append("text")
+						.style("font-size", function(d) { return d.size + "px"; })
+						.style("font-family", 'serif')
+						.style("fill", randomColor)
+						.style('cursor', 'pointer')
+						.style('opacity', 0.7)
+						.attr('class', 'keyword')
+						.attr("text-anchor", "middle")
+						.attr("transform", function(d) {
+							return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+						})
+						.text(function(d) { return d.text; })
+						.on("click", function(d, i){
+							window.location = "https://sanse.ru/index.php/sanse/search?query=QUERY_SLUG".replace(/QUERY_SLUG/, encodeURIComponent(''+d.text+''));
+						})
+						.on("mouseover", function(d, i) {
+							d3.select(this).transition()
+								.duration(transitionDuration)
+								.style('font-size',function(d) { return (d.size + 3) + "px"; })
+								.style('opacity', 1);
+						})
+						.on("mouseout", function(d, i) {
+							d3.select(this).transition()
+								.duration(transitionDuration)
+								.style('font-size',function(d) { return d.size + "px"; })
+								.style('opacity', 0.7);
+						})
+						.on('resize', function() { update() });
+				}
+
+				layout.start();
+
+			});
+			</script>
+</div>
+<div class="pkp_block block_custom" id="customblock-sidebar">
+	<div class="content">
+		<h2 class="pkp_screen_reader">Индексация</h2>
+<div align="center"><a href="https://elibrary.ru/contents.asp?titleid=28618" target="_blank" rel="noopener"><img src="https://sanse.ru/public/site/images/ltimonina/elibrary.png" alt="" width="200" height="65"></a></div>
+<div align="center"><a href="https://scholar.google.ru/scholar?q=source:%22%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9+%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7+%D0%B2+%D0%BD%D0%B0%D1%83%D0%BA%D0%B5+%D0%B8+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%22" target="_blank" rel="noopener"> <img style="font-weight: bold; text-align: center;" src="https://sanse.ru/public/site/images/ltimonina/googscholar.png" alt="" width="200" height="37"></a></div>
+<div align="center"><a href="https://www.base-search.net/Search/Results?q=coll:ftjsase" target="_blank" rel="noopener"> <img src="https://sanse.ru/public/site/images/ltimonina/base-logo-kl.png" alt="Base_Logo" width="200" height="77"></a></div>
+<div align="center"><a href="https://cyberleninka.ru/journal/n/sistemnyy-analiz-v-nauke-i-obrazovanii?i=1150391" target="_blank" rel="noopener"><img src="https://sanse.ru/public/site/images/ltimonina/cyberlenin.jpg" alt="" width="200" height="84"></a></div>
+<div align="center"><a href="http://www.openarchives.org/Register/BrowseSites?viewRecord=https://sanse.ru/index.php/sanse/oai" target="_blank" rel="noopener"> <img src="https://sanse.ru/public/site/images/ltimonina/oa100logo.gif" alt="" width="200" height="138"></a></div>
+<div align="center"><a href="https://unpaywall.org/sources/repository/jso4kr2wgvxqqqsndopy" target="_blank" rel="noopener"><img src="https://sanse.ru/public/site/images/ltimonina/unpaywall.jpg" alt="" width="200" height="62"></a></div>
+	</div>
+</div>
+
+</aside><!-- pkp_sidebar.left -->
+</div><!-- pkp_structure_content -->
+<div class="push"> </div>
+
+</div><!-- pkp_structure_page -->
+<footer class="footer" role="contentinfo">
+
+	<div class="ft2">
+		<div class="container">
+			<div class="ft2 e">
+				
+				
+				<div> 
+					<ul>
+						<li> <a href='https://sanse.ru/index.php/sanse/about'> О ЖУРНАЛЕ </a> </li>
+						<li> <a href="https://sanse.ru/index.php/sanse/issue/current"> ТЕКУЩИЙ ВЫПУСК </a> </li>
+						<li> <a href="https://sanse.ru/index.php/sanse/issue/archive"> АРХИВ </a> </li>
+					</ul>
+				</div>
+				<div>
+					<ul>
+																	</ul>
+				</div>
+				<div >
+					<ul>
+						<li>Адрес:  г. Дубна, ул. Университетская, д.19, ауд. 1-312</li>
+						<li>Тел: (496) 216-60-10</li>
+						<li>Emil: sanse@uni-dubna.ru</li>
+					</ul>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	<div class="ft1 ">
+		<div class="container">
+			<div class="ft1 e">
+				<div class="">
+										<p>© 2008-2025</p>
+				</div>
+
+				<div>
+					<p> <a href="https://uni-dubna.ru/">www.uni-dubna.ru </a> </p>
+				</div>
+				<div>
+				
+					<a href="https://uni-dubna.ru/"> ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ "ДУБНА" </a>
+					<img class="imgmain" src='https://sanse.ru/files/image.svg'>
+				</div>
+			</div>
+		</div> <!-- .row -->
+	</div><!-- .container -->
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js?v=3.2.1.3" type="text/javascript"></script><script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js?v=3.2.1.3" type="text/javascript"></script><script src="https://sanse.ru/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js?v=3.2.1.3" type="text/javascript"></script><script src="https://sanse.ru/plugins/themes/bootstrap3/bootstrap/js/bootstrap.min.js?v=3.2.1.3" type="text/javascript"></script><script src="https://sanse.ru/plugins/generic/citationStyleLanguage/js/articleCitation.js?v=3.2.1.3" type="text/javascript"></script><script src="https://d3js.org/d3.v4.js?v=3.2.1.3" type="text/javascript"></script><script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js?v=3.2.1.3" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.data = pkpUsageStats.data || {};pkpUsageStats.data.Submission = pkpUsageStats.data.Submission || {};pkpUsageStats.data.Submission[651] = {"data":{"2025":{"1":0,"2":0,"3":0,"4":10,"5":17,"6":18,"7":6,"8":25,"9":4,"10":19,"11":10,"12":21},"2026":{"1":4,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0}},"label":"\u0412\u0441\u0435 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438","color":"79,181,217","total":134};</script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js?v=3.2.1.3" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.locale = pkpUsageStats.locale || {};pkpUsageStats.locale.months = ["\u042f\u043d\u0432","\u0424\u0435\u0432","\u041c\u0430\u0440","\u0410\u043f\u0440","\u041c\u0430\u0439","\u0418\u044e\u043d","\u0418\u044e\u043b","\u0410\u0432\u0433","\u0421\u0435\u043d","\u041e\u043a\u0442","\u041d\u043e\u044f","\u0414\u0435\u043a"];pkpUsageStats.config = pkpUsageStats.config || {};pkpUsageStats.config.chartType = "bar";</script><script src="https://sanse.ru/plugins/generic/usageStats/js/UsageStatsFrontendHandler.js?v=3.2.1.3" type="text/javascript"></script><script type="text/javascript">
+
+</script>
+<script async src=https://www.googletagmanager.com/gtag/js?id='G-D19X4WXP17'></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D19X4WXP17');
+</script>
+
+</body>
+
+</html>
+
+<style>
+	.pkp_structure_content {
+		margin-bottom: 20px;
+	}
+
+	html,
+	body {
+		height: 100%;
+	}
+
+	.pkp_structure_page {
+		min-height: 100%;
+		margin-bottom: -190px;
+	}
+
+	.push,
+	footer {
+		height: 190px;
+	}
+
+	footer {
+		color: white;
+		padding: 0 !important;
+		margin-top: 0 !important;
+		width: 100%;
+	}
+
+	.sc img {
+		width: 24px;
+		height: 24px;
+		color: white;
+		margin: 0 10px;
+	}
+
+	.imgmain {
+		width: 40px;
+		height: 40px;
+	}
+
+	.ft1 {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background: #58648e !important;
+		color: white;
+		line-height: 50px;
+	}
+
+	.ft2 {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background: #ff6d00;
+		padding: 1rem 0;
+	}
+
+	.ft2 button {
+		padding: 0;
+		margin-top: calc(50% - .5rem);
+	}
+
+	.ft2 ul {
+		
+		text-align: left;
+		padding-left: 0;
+	}
+
+	.ft2 li {
+		list-style-type: none;
+		padding: 4px 0;
+		
+		
+	}
+	.ft1 ul {
+		
+		text-align: left;
+		padding-left: 0;
+	}
+
+	.ft1 li {
+		list-style-type: none;
+		padding: 4px 0;
+		
+		
+	}
+	.footer a, .footer a:hover, .footer a:focus, .footer a:active{
+		color: #fff;
+	}
+
+	@media (max-width: 1199px) {
+		.ft2 button {
+			margin-top: .5rem !important;
+		}
+
+		.ft2 ul {
+			
+		}
+
+		.ft2 li {
+			padding: 4px 0;
+		}
+
+		.ft2 {
+			flex-direction: column;
+			height: auto;
+			justify-content: center;
+			padding-bottom: 10px;
+			
+		}
+		.ft2.e>div{
+			width:40%;
+			margin-left:30%;
+			
+		}
+
+		.ft1 {
+			flex-direction: column;
+			height: auto;
+			justify-content: center;
+			line-height: initial;
+			padding: 10px;
+		}
+		.ft1.e>div{
+			width:40%;
+			margin-left:30%;
+			
+		}
+
+		.ft1 div:nth-child(2) {
+			margin-top: 20px;
+		}
+
+		.imgmain {
+			display: none;
+		}
+		.small-title{
+			margin-top: 10px;
+		}
+		
+	}
+</style> 

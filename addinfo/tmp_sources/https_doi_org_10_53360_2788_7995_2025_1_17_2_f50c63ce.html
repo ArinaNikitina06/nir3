@@ -1,0 +1,1233 @@
+
+
+
+    
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru"
+     prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#"    >
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=4.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ | Икласова | Вестник Университета Шакарима. Серия технические науки</title>
+    <meta property="og:title" content="ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ | Икласова | Вестник Университета Шакарима. Серия технические науки" />
+    <meta property="og:type" content="article" />
+            <meta property="article:author" content="К. Е. Икласова">
+            <meta property="article:author" content="А. К. Шайханова">
+            <meta property="article:author" content="М. Ж. Базарова">
+            <meta property="article:author" content="Р. М. Ташибаев">
+            <meta property="article:author" content="А. С. Казанбаева">
+                                    <meta property="article:tag" content="рекомендательные системы">
+                    <meta property="article:tag" content="коллаборативная фильтрация">
+                    <meta property="article:tag" content="глубокое обучение">
+                    <meta property="article:tag" content="обучение с подкреплением">
+                    <meta property="article:tag" content="графовые нейронные сети">
+                    <meta property="article:tag" content="образовательные платформы">
+                    <meta property="article:tag" content="персонализация">
+                    <meta property="article:tag" content="анализ данных">
+                <meta property="article:section" content="АВТОМАТИЗАЦИЯ И ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ (ОБЗОР)">
+    <meta name="description" content="ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ" />
+            <meta name="keywords" content="рекомендательные системы; коллаборативная фильтрация; глубокое обучение; обучение с подкреплением; графовые нейронные сети; образовательные платформы; персонализация; анализ данных" />
+                <link rel="canonical" href="https://tech.vestnik.shakarim.kz/jour/article/view/1767" />
+        <meta property="og:url" content="https://tech.vestnik.shakarim.kz/jour/article/view/1767">
+        <meta property="article:modified_time" content="2025-04-12T12:16:10Z">
+    <meta property="article:published_time" content="2025-04-12T12:16:14Z">
+
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+
+    <meta name="DC.Contributor.Sponsor" xml:lang="en" content=""/>
+    <meta name="DC.Contributor.Sponsor" xml:lang="kk" content=""/>
+    <meta name="DC.Contributor.Sponsor" xml:lang="ru" content="Данное исследование финансировалось/финансируется Комитетом по науке  Министерства науки и высшего образования Республики Казахстан (грант № AP23488869)."/>
+    <meta name="DC.Creator.PersonalName" content="Икласова К.Е."/>
+    <meta name="DC.Creator.PersonalName" content="Шайханова А.К."/>
+    <meta name="DC.Creator.PersonalName" content="Базарова М.Ж."/>
+    <meta name="DC.Creator.PersonalName" content="Ташибаев Р.М."/>
+    <meta name="DC.Creator.PersonalName" content="Казанбаева А.С."/>
+    <meta name="DC.Date.created" scheme="ISO8601" content="2025-03-29"/>
+    <meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-03-03"/>
+    <meta name="DC.Date.issued" scheme="ISO8601" content="2025-04-12"/>
+    <meta name="DC.Date.modified" scheme="ISO8601" content="2025-04-12"/>
+    <meta name="DC.Description" xml:lang="en" content=" Recommendation systems play a key role in the digital environment, providing personalized recommendations in online stores, streaming services, social networks, and educational platforms. This paper presents a comprehensive review of recommendation system models, including content and collaborative filtering, hybrid approaches, and state-of-the-art algorithms based on deep learning, reinforcement learning, and graph neural networks. The advantages and disadvantages of different methods, their accuracy, performance, scalability and adaptability to new data are analyzed. The main challenges such as the cold-start problem, data sparsity, bias of algorithms, the need for explainability of recommendations and privacy assurance are reviewed. Special attention is paid to the prospects of implementing recommendation systems in educational platforms. The importance of using hybrid and intelligent systems to effectively analyze user data and build recommendations tailored to individual needs is emphasized. The conclusion is drawn about further development of recommendation systems, which will be associated with the integration of the latest artificial intelligence technologies, optimization of computational resources and expansion of their application area in various digital ecosystems. The work can be useful for researchers, developers and practitioners working in the field of artificial intelligence and educational technologies. "/>
+    <meta name="DC.Description" xml:lang="kk" content=" Ұсыныс жүйелері интернет-дүкендерде, ағындық қызметтерде, әлеуметтік желілерде және білім беру платформаларында жеке ұсыныстар беру арқылы цифрлық ортада шешуші рөл атқарады. Бұл жұмыста мазмұнды және бірлескен сүзуді, гибридті тәсілдерді, сондай-ақ терең оқытуға, күшейтуге және графикалық нейрондық желілерге негізделген заманауи алгоритмдерді қоса алғанда, ұсыныс жүйелерінің модельдеріне жан-жақты шолу берілген. Әр түрлі әдістердің артықшылықтары мен кемшіліктері, олардың дәлдігі, өнімділігі, ауқымдылығы және жаңа деректерге бейімделуі талданады. «Суық бастау» мәселесі, деректердің сирек болуы, алгоритмдердің біржақтылығы, ұсыныстарды түсіндіру қажеттілігі және құпиялылықты қамтамасыз ету сияқты негізгі қоңыраулар қарастырылады. Білім беру платформаларына ұсынымдық жүйелерді енгізу перспективаларына ерекше назар аударылды. Пайдаланушылардың деректерін тиімді талдау және жеке қажеттіліктерді ескере отырып ұсыныстар құру үшін гибридті және интеллектуалды жүйелерді пайдаланудың маңыздылығы атап өтілді.  Қорытындылай келе, жасанды интеллекттің жаңа технологияларын интеграциялаумен, есептеу ресурстарын оңтайландырумен және оларды әртүрлі цифрлық экожүйелерде қолдану аясын кеңейтумен байланысты ұсынымдық жүйелерді одан әрі дамыту туралы қорытынды жасалды. Жұмыс жасанды интеллект және білім беру технологиялары саласында жұмыс істейтін зерттеушілерге, әзірлеушілерге және тәжірибешілерге пайдалы болуы мүмкін.  "/>
+    <meta name="DC.Description" xml:lang="ru" content=" Рекомендательные системы играют ключевую роль в цифровой среде, обеспечивая персонализированные рекомендации в интернет-магазинах, стриминговых сервисах, социальных сетях и образовательных платформах. В данной работе представлен всесторонний обзор моделей рекомендательных систем, включая контентную и коллаборативную фильтрацию, гибридные подходы, а также современные алгоритмы, основанные на глубоком обучении, обучении с подкреплением и графовых нейронных сетях. Проанализированы преимущества и недостатки различных методов, их точность, производительность, масштабируемость и адаптивность к новым данным. Рассмотрены основные вызовы, такие как проблема «холодного старта», разреженность данных, предвзятость алгоритмов, необходимость объяснимости рекомендаций и обеспечение конфиденциальности. Отдельное внимание уделено перспективам внедрения рекомендательных систем в образовательные платформы. Подчеркнута важность использования гибридных и интеллектуальных систем для эффективного анализа данных пользователей и построения рекомендаций с учетом индивидуальных потребностей. В заключении сделан вывод о дальнейшем развитии рекомендательных систем, которое будет связано с интеграцией новейших технологий искусственного интеллекта, оптимизацией вычислительных ресурсов и расширением области их применения в различных цифровых экосистемах. Работа может быть полезна исследователям, разработчикам и практикам, работающим в сфере искусственного интеллекта и образовательных технологий. "/>
+    <meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+    <meta name="DC.Identifier" content="1767"/>
+    <meta name="DC.Identifier.pageNumber" content="12-20"/>
+                            <meta name="DC.Identifier.DOI" content="10.53360/2788-7995-2025-1(17)-2"/>
+                    <meta name="dc.identifier" content="doi:10.53360/2788-7995-2025-1(17)-2"/>
+                <meta name="DC.Identifier.URI" content="https://tech.vestnik.shakarim.kz/jour/article/view/1767"/>
+    <meta name="DC.Language" scheme="ISO639-1" content="ru"/>
+    <meta name="DC.Rights" content=" Авторы, публикующие в данном журнале, соглашаются со следующим:   Авторы сохраняют за собой авторские права на работу и предоставляют журналу право первой публикации работы на условиях лицензии  Creative Commons Attribution License , которая позволяет другим распространять данную работу с обязательным сохранением ссылок на авторов оригинальной работы и оригинальную публикацию в этом журнале.  Авторы сохраняют право заключать отдельные контрактные договорённости, касающиеся не-эксклюзивного распространения версии работы в опубликованном здесь виде (например, размещение ее в институтском хранилище, публикацию в книге), со ссылкой на ее оригинальную публикацию в этом журнале.  Авторы имеют право размещать их работу в сети Интернет (например в институтском хранилище или персональном сайте) до и во время процесса рассмотрения ее данным журналом, так как это может привести к продуктивному обсуждению и большему количеству ссылок на данную работу (См.  The Effect of Open Access ).  "/>
+    <meta name="DC.Source" content="Вестник Университета Шакарима. Серия технические науки"/>
+    <meta name="DC.Source.ISSN" content="3006-0524"/>
+    <meta name="DC.Source.Issue" content="1(17)"/>    <meta name="DC.Source.URI" content="https://tech.vestnik.shakarim.kz/jour"/>
+    <meta name="DC.Source.Volume" content="0"/>                        <meta name="DC.Subject" xml:lang="en" content="recommendation systems"/>
+                                <meta name="DC.Subject" xml:lang="en" content="collaborative filtering"/>
+                                <meta name="DC.Subject" xml:lang="en" content="deep learning"/>
+                                <meta name="DC.Subject" xml:lang="en" content="reinforcement learning"/>
+                                <meta name="DC.Subject" xml:lang="en" content="graph neural networks"/>
+                                <meta name="DC.Subject" xml:lang="en" content="educational platforms"/>
+                                <meta name="DC.Subject" xml:lang="en" content="personalization"/>
+                                <meta name="DC.Subject" xml:lang="en" content="data analysis"/>
+                                    <meta name="DC.Subject" xml:lang="kk" content="ұсыныс жүйелері"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="бірлескен сүзу"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="терең оқыту"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="күшейту жаттығулары"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="графикалық нейрондық желілер"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="білім беру платформалары"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="даралау"/>
+                                <meta name="DC.Subject" xml:lang="kk" content="деректерді талдау"/>
+                                    <meta name="DC.Subject" xml:lang="ru" content="рекомендательные системы"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="коллаборативная фильтрация"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="глубокое обучение"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="обучение с подкреплением"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="графовые нейронные сети"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="образовательные платформы"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="персонализация"/>
+                                <meta name="DC.Subject" xml:lang="ru" content="анализ данных"/>
+                <meta name="DC.Title" content="ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ"/>
+            <meta name="DC.Title.Alternative" xml:lang="en" content="REVIEW OF RECOMMENDER SYSTEMS: MODELS AND PROSPECTS FOR USE  IN EDUCATIONAL PLATFORMS"/>
+                <meta name="DC.Title.Alternative" xml:lang="kk" content="ҰСЫНЫС ЖҮЙЕЛЕРІНЕ ШОЛУ: МОДЕЛЬДЕР МЕН ПЕРСПЕКТИВАЛАР БІЛІМ БЕРУ ПЛАТФОРМАЛАРЫНДА ҚОЛДАНУ"/>
+            <meta name="DC.Type" content="Text.Serial.Journal"/>
+    <meta name="DC.Type.articleType" content="АВТОМАТИЗАЦИЯ И ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ (ОБЗОР)"/>
+        <meta name="gs_meta_revision" content="1.1" />
+    <meta name="citation_journal_title" content="Вестник Университета Шакарима. Серия технические науки"/>
+    <meta name="citation_issn" content="3006-0524"/>
+        <meta name="citation_author" content="К. Е. Икласова"/>
+        <meta name="citation_author_institution" content="Северо-Казахстанский университет имени М. Козыбаева"/>
+        <meta name="citation_author" content="А. К. Шайханова"/>
+        <meta name="citation_author_institution" content="Евразийский национальный университет имени Л.Н. Гумилева"/>
+        <meta name="citation_author" content="М. Ж. Базарова"/>
+        <meta name="citation_author_institution" content="Восточно-Казахстанский университет имени С. Аманжолова"/>
+        <meta name="citation_author" content="Р. М. Ташибаев"/>
+        <meta name="citation_author_institution" content="Северо-Казахстанский университет имени М. Козыбаева"/>
+        <meta name="citation_author" content="А. С. Казанбаева"/>
+        <meta name="citation_author_institution" content="Северо-Казахстанский университет имени М. Козыбаева"/>
+<meta name="citation_title" content="ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ"/>
+
+    <meta name="citation_date" content="2025/03/29"/>
+
+    <meta name="citation_volume" content="0"/>
+    <meta name="citation_issue" content="1(17)"/>
+
+    <meta name="citation_firstpage" content="12-20"/>
+                            <meta name="citation_doi" content="10.53360/2788-7995-2025-1(17)-2"/>
+        <meta name="citation_abstract_html_url" content="https://tech.vestnik.shakarim.kz/jour/article/view/1767"/>
+    <meta name="citation_language" content="ru"/>
+                        <meta name="citation_keywords" xml:lang="en" content="recommendation systems"/>
+                                <meta name="citation_keywords" xml:lang="en" content="collaborative filtering"/>
+                                <meta name="citation_keywords" xml:lang="en" content="deep learning"/>
+                                <meta name="citation_keywords" xml:lang="en" content="reinforcement learning"/>
+                                <meta name="citation_keywords" xml:lang="en" content="graph neural networks"/>
+                                <meta name="citation_keywords" xml:lang="en" content="educational platforms"/>
+                                <meta name="citation_keywords" xml:lang="en" content="personalization"/>
+                                <meta name="citation_keywords" xml:lang="en" content="data analysis"/>
+                                    <meta name="citation_keywords" xml:lang="kk" content="ұсыныс жүйелері"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="бірлескен сүзу"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="терең оқыту"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="күшейту жаттығулары"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="графикалық нейрондық желілер"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="білім беру платформалары"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="даралау"/>
+                                <meta name="citation_keywords" xml:lang="kk" content="деректерді талдау"/>
+                                    <meta name="citation_keywords" xml:lang="ru" content="рекомендательные системы"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="коллаборативная фильтрация"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="глубокое обучение"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="обучение с подкреплением"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="графовые нейронные сети"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="образовательные платформы"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="персонализация"/>
+                                <meta name="citation_keywords" xml:lang="ru" content="анализ данных"/>
+                                    <meta name="citation_pdf_url" content="https://tech.vestnik.shakarim.kz/jour/article/download/1767/592"/>
+                
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                                <meta property="og:image" content="https://tech.vestnik.shakarim.kz/public/journals/1/homeHeaderTitleImage_ru_RU.jpg"/>
+                
+        <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/lib/pkp/styles/pkp.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/lib/pkp/styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/common.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/compiled.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/slick.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/slick-theme.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/select2.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/overall.css?v=20260123154505" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/assets/css/template.css?v=20260123154505" type="text/css" />
+    <link rel="stylesheet" href="https://tech.vestnik.shakarim.kz/styles/branding.css" type="text/css" />
+
+    <!-- Base Jquery -->
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/jquery_legacy/jquery.min.js"></script>
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/jquery_legacy/jquery-ui.min.js"></script>
+    
+    
+    <!-- Default global locale keys for JavaScript -->
+    
+<script type="text/javascript">
+    jQuery.pkp = jQuery.pkp || { };
+    jQuery.pkp.locale = { };
+            
+                jQuery.pkp.locale.form_dataHasChanged = 'Данные этой формы были изменены. Все равно продолжить?';
+    </script>
+    <!-- Compiled scripts -->
+            <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/pkp.min.js?v=20260123154505"></script>
+    
+    <!-- Add javascript required for font sizer -->
+    <script type="text/javascript">
+        <!--
+        $(function(){
+            fontSize("#sizer", "body", 9, 16, 32, ""); // Initialize the font sizer
+        });
+        // -->
+    </script>
+
+    <!-- Form validation -->
+        <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/lib/pkp/js/lib/jquery/plugins/validate/jquery.validate.js"></script>
+
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/resources/string_functions.js"></script>
+    <script type="text/javascript">
+        <!--
+        // initialise plugins
+        
+        $(function(){
+            jqueryValidatorI18n("https://tech.vestnik.shakarim.kz", "ru_RU"); // include the appropriate validation localization
+            
+            $(".tagit").click(function() {
+                $(this).find('input').focus();
+            });
+        });
+        // -->
+        
+        $(document).ready(function() {
+            $('#simpleSearchForm').attr('action', "https://tech.vestnik.shakarim.kz/jour/search/search")
+        });
+    </script>
+
+        
+
+            <script language="javascript" type="text/javascript" src="https://tech.vestnik.shakarim.kz/plugins/generic/tinymce/tinymce/tinymce.min.js"></script>
+            <script language="javascript" type="text/javascript">
+                tinyMCE.init({
+                    entity_encoding : "raw",
+                    contextmenu: false,
+                    menubar: "edit insert view format table tools",
+                    plugins : "paste,fullscreen,lists,link,help,code,table,code,autolink,advlist,charmap,hr,searchreplace,wordcount,visualblocks,visualchars,textcolor,nonbreaking",
+                    paste_data_images : false,
+                    mode : "exact",
+                    language : "ru",
+                    elements : "email_body",
+                    relative_urls : false,
+                    remove_script_host : false,
+                    indent: false,
+                    browser_spellcheck: true,
+                    paste_auto_cleanup_on_paste : true,
+                    apply_source_formatting : false,
+                    forced_root_block : "p",
+                    theme : "silver",
+                    branding: false,
+                    statusbar: true,
+                    toolbar: "bold italic underline bullist numlist subscript superscript nonbreaking| link unlink code fullscreen image| alignleft aligncenter alignright alignjustify",
+                    theme_advanced_buttons1 : "cut,copy,paste,|,bold,italic,underline,bullist,numlist,sub,sup,|,link,unlink,help,code,fullscreen,image",
+                    theme_advanced_buttons2 : "",
+                    theme_advanced_buttons3 : ""
+                });
+            </script>
+            
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/relatedItems.js"></script>
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/inlinePdf.js"></script>
+    <script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/pdfobject.js"></script>
+
+
+<!-- Standard Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+ 
+<!-- For Opera Coast: -->
+<link rel="icon" sizes="228x228" href="/favicon-coast.png" />
+ 
+<!-- For Chrome for Android: -->
+<link rel="icon" sizes="192x192" href="/touch-icon-192x192.png">
+ 
+<!-- For Windows 8: -->
+<meta name="msapplication-TileColor" content="#ef0303" />
+<meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+<meta name="msapplication-config" content="/browserconfig.xml" />
+ 
+<!-- For iPhone 6 Plus with @3× display: -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-180x180-precomposed.png">
+ 
+<!-- For iPad with @2× display running iOS ≥ 7: -->
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152-precomposed.png">
+ 
+<!-- For iPad with @2× display running iOS ≤ 6: -->
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+ 
+<!-- For iPhone with @2× display running iOS ≥ 7: -->
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120-precomposed.png">
+ 
+<!-- For iPhone with @2× display running iOS ≤ 6: -->
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+ 
+<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76-precomposed.png">
+ 
+<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+ 
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 57×57px -->
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png"><!-- 57×57px -->
+ 
+<!-- favicon png -->
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-128x128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-256x256.png" sizes="256x256">
+    <link rel="alternate" hreflang="en" href="https://tech.vestnik.shakarim.kz/jour/article/view/1767?locale=en_US"/>
+    <link rel="alternate" hreflang="kk" href="https://tech.vestnik.shakarim.kz/jour/article/view/1767?locale=kk_KZ"/>
+    <link rel="alternate" hreflang="ru" href="https://tech.vestnik.shakarim.kz/jour/article/view/1767?locale=ru_RU"/>
+<link rel="alternate" hreflang="x-default" href="https://tech.vestnik.shakarim.kz/jour/article/view/1767"/>
+</head>
+<body>
+<div id="container">
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="wrapper">
+
+                <div class="title">
+                                            Вестник Университета Шакарима. Серия технические науки<br/>
+                        Vestnik Universiteta Shakarima. Serija tehnicheskie nauki
+                                    </div>
+
+                                                                                                        
+                <div class="issn">
+                    <span id="issnp" data-id="2788-7995">ISSN <a href="https://portal.issn.org/resource/ISSN/2788-7995" target="_blank">2788-7995</a> (Print)</span><br/>                    <span id="issne" data-id="3006-0524">ISSN <a href="https://portal.issn.org/resource/ISSN/3006-0524" target="_blank">3006-0524</a> (Online)</span><br/>                                    </div>
+
+                <a href="#" class="userBlock" onclick="$('#fullback').css('display', 'flex'); $('#sidebar-username').focus(); return false;">
+                                            <span>Войти</span>
+                                    </a>
+
+                                    <div class="language">
+                                                                                                             <a href='#'   class="toggler" data="https://tech.vestnik.shakarim.kz/jour/user/setLocale/en_US?source=%2Fjour%2Farticle%2Fview%2F1767" class="en" >eng</a>
+                            |                                                                                                             <a href='#'   class="toggler" data="https://tech.vestnik.shakarim.kz/jour/user/setLocale/kk_KZ?source=%2Fjour%2Farticle%2Fview%2F1767" class="kk" >Kaz</a>
+                            |                                                                                                             <a href='#'  onclick="return false;" class="ru current" >рус</a>
+                                                                            <script>
+                        $(document).ready(function(){
+                            $(".language a.toggler").click(function(){
+                                var url = $(this).attr('data');
+                                var hash = encodeURI(window.location.hash);
+                                location.href=(url+hash);
+                                return false;
+                            });
+                        });
+                        
+                        </script>
+                        <input id="currentLocale" value="ru_RU" type="hidden">
+                    </div>
+                    
+            </div>
+        </div>
+            </nav>
+
+    <div class="fullback" id="image-back">
+        <div class="image-wrapper">
+            <img src="" alt="Preview" class="preview"/>
+            <a class="close-cross" href="#" onclick="$('#image-back').hide(); return false;"></a>
+        </div>
+    </div>
+
+    <div class="fullback" id="fullback">
+        <div class="modal userLogin">
+        <a class="close-cross" href="#" onclick="$('#fullback').hide(); return false;"></a>
+                    <h3 class="blockTitle">Войти</h3>
+                                            <form method="post" action="https://tech.vestnik.shakarim.kz/jour/login/signIn">
+                    <table>
+                        <tr>
+                            <td class="label"><label for="sidebar-username">Логин</label></td>
+                            <td><input type="text" id="sidebar-username" name="username" value="" size="12" maxlength="32" class="textField" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="sidebar-password">Пароль</label></td>
+                            <td><input type="password" id="sidebar-password" name="password" value="" size="12" maxlength="32" class="textField" autocomplete="on"/></td>
+                        </tr>
+                        <tr>
+                            <td class="label"></td>
+                            <td><input type="checkbox" id="remember" name="remember" value="1" /> <label class="sans" for="remember">Запомнить меня</label></td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td colspan="2">
+                                <div class="links">
+                                    <a href="https://tech.vestnik.shakarim.kz/jour/user/register">Регистрация нового пользователя</a>
+                                    <a href="https://tech.vestnik.shakarim.kz/jour/login/lostPassword">Забыли Ваш пароль?</a>
+                                </div>
+                            </td>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Вход" class="button" /></td>
+                        </tr>
+                    </table>
+                </form>
+                            </div>
+    </div>
+    <div class="head">
+        <div class="container hero">
+                                                            <div class="wrapper ">
+                <a href="/" class="headerLink"><h2 class="jtitle">
+                                            Вестник Университета Шакарима. Серия технические науки
+                                    </h2></a>
+                <form id="simpleSearchForm" class="headSearch" method="get">
+                <table id="simpleSearchInput"><tr><td>
+                                                                 <script type="text/javascript">
+			
+				$(function() {
+		$('#simpleQueryAutocomplete').pkpHandler(
+			'$.pkp.plugins.generic.lucene.LuceneAutocompleteHandler',
+			{
+				sourceUrl: "https://tech.vestnik.shakarim.kz/jour/lucene/queryAutocomplete",
+				searchForm: "simpleSearchForm"
+			});
+	});
+</script>
+<span id="simpleQueryAutocomplete">
+	<input type="text" id="simpleQuery_input" name="simpleQuery" size="15" maxlength="255" value="" class="textField" />
+	<input type="hidden" id="simpleQuery" name="simpleQuery_hidden" value="" />
+	<script type="text/javascript">
+				$('#simpleQuery_input').attr('name', 'simpleQuery_input');
+		$('#simpleQuery').attr('name', 'simpleQuery');
+	</script>
+</span>
+                                        <input type="hidden" name="scr" value="3f1jpicvm3fjfmr9pacqmbcrk4"/>
+                    <input type="hidden" name="searchField" value="query"/>
+                    <input type="submit" value="" class="button" />
+                </td></tr></table>
+                </form>
+                <div class="clear"></div>
+                <a class="search" href="https://tech.vestnik.shakarim.kz/jour/search/search">Расширенный поиск</a>
+            </div>
+                    </div>
+    </div>
+
+    <div class="mainMenu" id="navbarWrapper">
+        <div class="mobile-view container">
+            <ul><li><a href="https://tech.vestnik.shakarim.kz/jour/index"><img src="/assets/img/home.svg" alt="Главная"></a></li>
+                <li><a href="#" onclick="$('#mobile-menu, .journalInfo').toggle(); return false;"><img src="/assets/img/sandwich.svg" alt="Быстрая навигация"></a></li>
+                <li id="archives"><a href="https://tech.vestnik.shakarim.kz/jour/issue/archive">Архивы</a></li>
+            </ul>
+        </div>
+        <div class="container" id="float-menu">
+            <div id="mobile-menu">
+                <div id="navbar">
+    <ul class="menu">
+        <li id="home"><a href="/">Главная</a></li>
+        <li id="about"><a href="https://tech.vestnik.shakarim.kz/jour/about">О журнале</a></li>
+
+                        
+                    <li id="current"><a href="https://tech.vestnik.shakarim.kz/jour/issue/current">Текущий выпуск</a></li>
+            <li id="archives"><a href="https://tech.vestnik.shakarim.kz/jour/issue/archive">Архивы</a></li>
+        
+                
+        
+
+                                </ul>
+</div>
+                
+<div class="menu" id="sidebarMenu">
+  <ul>
+    <li id="sidebar_submit"><a class="submitArticle" href="https://tech.vestnik.shakarim.kz/jour/author/submit/1">Отправить статью</a></li>    <li id="sidebar_author"><a href="https://tech.vestnik.shakarim.kz/jour/about/submissions#authorGuidelines">Правила для авторов</a></li>
+    <li id="sidebar_editorialc"><a href="https://tech.vestnik.shakarim.kz/jour/pages/view/EditorialC">Редакционная коллегия</a></li>
+    <li id="sidebar_editorials" style="display:none"><a href="https://tech.vestnik.shakarim.kz/jour/pages/view/EditorialS">Редакционный совет</a></li>
+    <li id="sidebar_policy"><a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies#custom-0">Рецензирование</a></li>
+    <li id="sidebar_ethics"><a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies#custom-1">Этика публикаций</a></li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="body" class="body">
+        <div class="container flex">
+            <div id="main" class="main">
+
+            
+
+                                                <div id="breadcrumb">
+                        <a href="https://tech.vestnik.shakarim.kz/jour/index" target="_parent">Главная</a> &gt;
+                        <a href="https://tech.vestnik.shakarim.kz/jour/issue/view/26" target="_parent">№ 1(17) (2025)</a> &gt;                        <a href="https://tech.vestnik.shakarim.kz/jour/article/view/1767/0" class="current" target="_parent">Икласова</a>
+                    </div>
+                
+            
+                        
+            <div id="content">
+        
+    
+    
+
+    
+
+
+    <div id="topBar">
+                                                                        </div>
+
+        
+    <div id="articleTitle">
+      <h1>ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ
+          </h1>
+      
+    </div>
+
+      <div id="authorString"><em>
+          <a title="К. Е. Икласова" href="http://orcid.org/0000-0002-8330-4282" target="_blank"><img src="/resources/orcid.png"></a>&nbsp;<a rel="nofollow" href='/index.php/jour/search?authors=К. AND Е. AND Икласова&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+        К. Е. Икласова</a>,          <a title="А. К. Шайханова" href="http://orcid.org/0000-0001-6006-4813" target="_blank"><img src="/resources/orcid.png"></a>&nbsp;<a rel="nofollow" href='/index.php/jour/search?authors=А. AND К. AND Шайханова&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+        А. К. Шайханова</a>,          <a title="М. Ж. Базарова" href="http://orcid.org/0000-0003-2580-6580" target="_blank"><img src="/resources/orcid.png"></a>&nbsp;<a rel="nofollow" href='/index.php/jour/search?authors=М. AND Ж. AND Базарова&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+        М. Ж. Базарова</a>,          <a title="Р. М. Ташибаев" href="http://orcid.org/0009-0006-2436-9584" target="_blank"><img src="/resources/orcid.png"></a>&nbsp;<a rel="nofollow" href='/index.php/jour/search?authors=Р. AND М. AND Ташибаев&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+        Р. М. Ташибаев</a>,          <a title="А. С. Казанбаева" href="http://orcid.org/0000-0002-3077-3499" target="_blank"><img src="/resources/orcid.png"></a>&nbsp;<a rel="nofollow" href='/index.php/jour/search?authors=А. AND С. AND Казанбаева&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+        А. С. Казанбаева</a>        </em></div>
+    
+
+                        
+              <p><a id="pub-id::doi" href="https://doi.org/10.53360/2788-7995-2025-1(17)-2"  aria-label="DOI for ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ"  >https://doi.org/10.53360/2788-7995-2025-1(17)-2</a></p>        
+
+          <div class="banner">
+    
+  </div>
+      <div id="articleFullText">
+                    <script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
+            <a class="block-link" data-target="crossmark"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" width="150" /></a>
+                <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+        <script src="https://yastatic.net/share2/share.js"></script>
+        <div class="ya-share2 yashare-auto-init" data-services="messenger,odnoklassniki,lj,telegram,vkontakte" data-copy="extraItem" data-size="s"></div>
+        <h2 class="fullsize">Полный текст:<a class="full_toggle" onclick="toggleFullWidth()"></a></h2>
+        <div class="fulltext">
+                                                                                                  <a class="galley-link" href="https://tech.vestnik.shakarim.kz/jour/article/view/1767/592" class="file PDF ru_RU PDF (Rus)" target="_parent">PDF (Rus)</a>
+                                                                                                                                                                                                                                              
+                            <a class="qrcode-link galley-link"  href="#" onclick="$('#qr-back').show(); return false;"><div id="qrcode-thumb"></div>сгенерировать QR код</a>
+        </div>
+
+
+    </div>
+  
+<ul id="tabs">
+                  <li id="tab-button1"><a href="#" atitle="tab1">Аннотация</a></li>
+                  <li id="tab-button2"><a href="#" atitle="tab2">Об авторах</a></li>
+            <li id="tab-button3"><a href="#" atitle="tab3">Список литературы</a></li>
+                <li id="tab-button6" style="display: none"><a href="#" atitle="tab6">Cited By</a></li>
+    <li id="tab-button8" style="display: none"><a href="#" atitle="tab8">Scopus Cited</a></li>
+    </ul>
+<div id="tab-holder">
+    <div id="tab1" class="tab-wrap">
+                <div id="articleAbstract">
+            <h3>Аннотация</h3>
+            <div><p>Рекомендательные системы играют ключевую роль в цифровой среде, обеспечивая персонализированные рекомендации в интернет-магазинах, стриминговых сервисах, социальных сетях и образовательных платформах. В данной работе представлен всесторонний обзор моделей рекомендательных систем, включая контентную и коллаборативную фильтрацию, гибридные подходы, а также современные алгоритмы, основанные на глубоком обучении, обучении с подкреплением и графовых нейронных сетях. Проанализированы преимущества и недостатки различных методов, их точность, производительность, масштабируемость и адаптивность к новым данным. Рассмотрены основные вызовы, такие как проблема «холодного старта», разреженность данных, предвзятость алгоритмов, необходимость объяснимости рекомендаций и обеспечение конфиденциальности. Отдельное внимание уделено перспективам внедрения рекомендательных систем в образовательные платформы. Подчеркнута важность использования гибридных и интеллектуальных систем для эффективного анализа данных пользователей и построения рекомендаций с учетом индивидуальных потребностей. В заключении сделан вывод о дальнейшем развитии рекомендательных систем, которое будет связано с интеграцией новейших технологий искусственного интеллекта, оптимизацией вычислительных ресурсов и расширением области их применения в различных цифровых экосистемах. Работа может быть полезна исследователям, разработчикам и практикам, работающим в сфере искусственного интеллекта и образовательных технологий.</p></div>
+        </div>
+              <div id="articleSubject">
+      <h3>Ключевые слова</h3>
+      <div>
+                
+        <a rel="nofollow" href="/index.php/jour/search/?subject=рекомендательные системы&scr=3f1jpicvm3fjfmr9pacqmbcrk4">рекомендательные системы</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= коллаборативная фильтрация&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> коллаборативная фильтрация</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= глубокое обучение&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> глубокое обучение</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= обучение с подкреплением&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> обучение с подкреплением</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= графовые нейронные сети&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> графовые нейронные сети</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= образовательные платформы&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> образовательные платформы</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= персонализация&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> персонализация</a>,        
+        <a rel="nofollow" href="/index.php/jour/search/?subject= анализ данных&scr=3f1jpicvm3fjfmr9pacqmbcrk4"> анализ данных</a>              </div>
+      <br />
+            </div>
+        
+              <div class="sponsor">
+        <b>При поддержке:</b> Данное исследование финансировалось/финансируется Комитетом по науке  Министерства науки и высшего образования Республики Казахстан (грант № AP23488869).
+      </div>
+                    		
+                    </div>
+    <div id="tab2" class="tab-wrap">
+      <h3 class="blockTitle">
+                  Об авторах
+              </h3>
+               <a rel="nofollow" href='/index.php/jour/search?authors=К. Е. Икласова&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+             <em><strong>К. Е. Икласова</strong></em>
+         </a><br />
+        <div class="stepleft">
+                        Северо-Казахстанский университет имени М. Козыбаева
+        <br/>Казахстан
+    <br/><span><p><strong>Кайнижамал Есимсеитовна Икласова </strong>– PhD, доцент кафедры «Информационно-коммуникационные технологии»</p><p>150000, г. Петропавловск, ул. Пушкина, 86</p></span>
+				    </div>
+    <div class="separator"></div>
+    <br/><br/>
+
+             <a rel="nofollow" href='/index.php/jour/search?authors=А. К. Шайханова&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+             <em><strong>А. К. Шайханова</strong></em>
+         </a><br />
+        <div class="stepleft">
+                        Евразийский национальный университет имени Л.Н. Гумилева
+        <br/>Казахстан
+    <br/><span><p><strong>Айгуль Кайрулаевна Шайханова </strong>– PhD, и.о. профессора кафедры информационной безопасности</p><p>100000, г. Астана, ул. Сатбаева, 2</p></span>
+				    </div>
+    <div class="separator"></div>
+    <br/><br/>
+
+             <a rel="nofollow" href='/index.php/jour/search?authors=М. Ж. Базарова&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+             <em><strong>М. Ж. Базарова</strong></em>
+         </a><br />
+        <div class="stepleft">
+                        Восточно-Казахстанский университет имени С. Аманжолова
+        <br/>Казахстан
+    <br/><span><p><strong>Мадина Жомартовна</strong> <strong>Базарова </strong>– PhD, ассоциированный профессор кафедры «Компьютерное моделирование и информационные технологии»</p><p>070002, г. Усть-Каменогорск, ул. 30-й Гвардейской дивизии, 34</p></span>
+				    </div>
+    <div class="separator"></div>
+    <br/><br/>
+
+             <a rel="nofollow" href='/index.php/jour/search?authors=Р. М. Ташибаев&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+             <em><strong>Р. М. Ташибаев</strong></em>
+         </a><br />
+        <div class="stepleft">
+                        Северо-Казахстанский университет имени М. Козыбаева
+        
+    <br/><span><p><strong>Рустем Маратович</strong> <strong>Ташибаев </strong>– докорант</p><p>150000, г. Петропавловск, ул. Пушкина, 86</p></span>
+				    </div>
+    <div class="separator"></div>
+    <br/><br/>
+
+             <a rel="nofollow" href='/index.php/jour/search?authors=А. С. Казанбаева&scr=3f1jpicvm3fjfmr9pacqmbcrk4'>
+             <em><strong>А. С. Казанбаева</strong></em>
+         </a><br />
+        <div class="stepleft">
+                        Северо-Казахстанский университет имени М. Козыбаева
+        <br/>Казахстан
+    <br/><span><p><strong>Альбина Советовна</strong> <strong>Казанбаева </strong>– PhD, доцент кафедры «Строительство и дизайн»</p><p>150000, г. Петропавловск, ул. Пушкина, 86</p></span>
+				    </div>
+    <div class="separator"></div>
+    <br/><br/>
+
+          
+    </div>
+        <div id="tab3" class="tab-wrap">
+        <h3>Список литературы</h3>
+        <div id="articleCitations">
+          <div>
+                                                   
+               
+
+              <p><span class ="citation-number">1. </span>Gomez-Uribe C.A. The Netflix recommender system: Algorithms, business value, and innovation / C.A. Gomez-Uribe, N. Hunt // ACM Transactions on Management Information Systems. – 2022. – № 6(4). – Р. 1-19. https://doi.org/10.1145/2843948.</p>
+                                         
+               
+
+              <p><span class ="citation-number">2. </span>Pazzani M.J. Content-based recommendation systems / M.J. Pazzani, D. Billsus // In The adaptive web. – 2007. – Р. 325-341. https://doi.org/10.1007/978-3-540-72079-9_10.</p>
+                                         
+               
+
+              <p><span class ="citation-number">3. </span>Item-based collaborative filtering recommendation algorithms / В. Sarwar et al // Proceedings of the 10th International Conference on World Wide Web. – 2001. – Р. 285-295. https://doi.org/10.1145/371920.372071.</p>
+                                         
+               
+
+              <p><span class ="citation-number">4. </span>An algorithmic framework for performing collaborative filtering / J.L. Herlocker et al // Proceedings of the 22nd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval. – 1999. – Р. 230-237. https://doi.org/10.1145/312624.312682.</p>
+                                         
+               
+
+              <p><span class ="citation-number">5. </span>Deshpande, M. Item-based top-N recommendation algorithms / M. Deshpande, G. Karypis // ACM Transactions on Information Systems. – 2004. – № 22(1). – Р. 143-177. https://doi.org/10.1145/963770.963776.</p>
+                                         
+               
+
+              <p><span class ="citation-number">6. </span>Koren Y. Matrix factorization techniques for recommender systems / Y. Koren, R. Bell, C. Volinsky // Computer. – 2009. – № 42(8). – Р. 30-37. https://doi.org/10.1109/MC.2009.263.</p>
+                                         
+               
+
+              <p><span class ="citation-number">7. </span>Burke R. Hybrid web recommender systems / Burke R. // In The adaptive web. – 2007. – Р. 377408. https://doi.org/10.1007/978-3-540-72079-9_12.</p>
+                                         
+               
+
+              <p><span class ="citation-number">8. </span>Session-based recommendations with recurrent neural networks / В. Hidasi et al // Proceedings of the International Conference on Learning Representations (ICLR). – 2016. https://doi.org/10.48550/arXiv.1511.06939.</p>
+                                         
+               
+
+              <p><span class ="citation-number">9. </span>Attention is all you need / A. Vaswani et al // Advances in Neural Information Processing Systems. – 2017. https://doi.org/10.48550/arXiv.1706.03762.</p>
+                                         
+               
+
+              <p><span class ="citation-number">10. </span>Deep reinforcement learning for page-wise recommendations / Х. Zhao et al // Proceedings of the 12th ACM Conference on Recommender Systems. – 2018. Р. 95-103. https://doi.org/10.1145/3240323.3240357.</p>
+                                         
+               
+
+              <p><span class ="citation-number">11. </span>Top-K off-policy correction for a REINFORCE recommender system / М. Chen et al // Proceedings of the 12th ACM International Conference on Web Search and Data Mining. – 2019. – Р. 456-464. https://doi.org/10.1145/3289600.3290999.</p>
+                                         
+               
+
+              <p><span class ="citation-number">12. </span>Hamilton W.L. Representation learning on graphs: Methods and applications / W.L. Hamilton, R. Ying, J. Leskovec // IEEE Data Engineering Bulletin. – 2017. – № 40(3). – Р. 52-74. https://doi.org/10.48550/arXiv.1709.05584.</p>
+                                         
+               
+
+              <p><span class ="citation-number">13. </span>Session-based recommendation with graph neural networks / S. Wu et al // Proceedings of the AAAI Conference on Artificial Intelligence. – 2019. – № 33(1). – Р. 346-353. https://doi.org/10.1609/aaai.v33i01.3301346.</p>
+                                                  
+          </div>
+          <br />
+        </div>
+        
+  
+    </div>
+    
+    <div id="tab6" class="tab-wrap"></div>
+
+    <div id="tab8" class="tab-wrap"></div>
+
+    <div id="tab7" class="tab-wrap">
+        <h3>Рецензия</h3>
+        <div class="reviewText">
+            
+        </div>
+    </div>
+</div>
+
+
+    
+<div class="reference">
+
+      <h4 class="tocSectionTitle">Для цитирования:</h4><hr/>
+            
+        
+    <p id="citRus">
+                                        Икласова&nbsp;К.Е., 
+                                                Шайханова&nbsp;А.К., 
+                                                Базарова&nbsp;М.Ж., 
+                                                Ташибаев&nbsp;Р.М., 
+                                                Казанбаева&nbsp;А.С.
+                                                  ОБЗОР РЕКОМЕНДАТЕЛЬНЫХ СИСТЕМ: МОДЕЛИ И ПЕРСПЕКТИВЫ  ИСПОЛЬЗОВАНИЯ В ОБРАЗОВАТЕЛЬНЫХ ПЛАТФОРМАХ.    <i>Вестник Университета Шакарима. Серия технические науки</i>.        2025;(1(17)):12-20.                                                  <a href="https://doi.org/10.53360/2788-7995-2025-1(17)-2" target="_blank">https://doi.org/10.53360/2788-7995-2025-1(17)-2</a>                          
+    </p>
+
+  
+      <h4 class="tocSectionTitle">For citation:</h4><hr/>
+    <p id="citEng">                  Iklassova&nbsp;K.Е., 
+                              Shaikhanova&nbsp;A.K., 
+                              Bazarova&nbsp;M.Zh., 
+                              Tashibayev&nbsp;R.M., 
+                              Kazanbayeva&nbsp;A.S.
+                                  REVIEW OF RECOMMENDER SYSTEMS: MODELS AND PROSPECTS FOR USE  IN EDUCATIONAL PLATFORMS.    <i>Bulletin of Shakarim University. Technical Sciences</i>.        2025;(1(17)):12-20.    
+                                                                                (In Russ.)
+                                
+                                      <a href="https://doi.org/10.53360/2788-7995-2025-1(17)-2" target="_blank">https://doi.org/10.53360/2788-7995-2025-1(17)-2</a>                  
+  </p>
+  
+</div> 
+<div class="fullback" id="qr-back" >
+  <div class="image-wrapper">
+    <div id="qrcode"></div>
+    <a class="close-cross" href="#" onclick="$('#qr-back').hide(); return false;"></a>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+function switchTab(tab){
+    $("#tabs li a").each(function(){
+      if (tab==$(this).attr("atitle")){
+        jQuery("#tab-holder .tab-wrap").hide();
+        jQuery("#tabs li").attr("id","");
+        jQuery("#tabs a[atitle='"+tab+"']").parent().attr("id","current");
+        jQuery('#' + tab).fadeIn();
+      }
+    })
+    
+}
+
+jQuery(document).ready(function(){
+
+  jQuery("#tab-holder .tab-wrap").hide(); // Скрываем содержание
+  jQuery("#tabs li:first").attr("id","current"); // Активируем первую закладку
+  jQuery("#tab-holder div:first").fadeIn(); // Выводим содержание
+    
+  jQuery('#tabs a').click(function(e) {
+    e.preventDefault();
+    switchTab(jQuery(this).attr('atitle'));
+  });
+  if($("#articleCitations div p").length>0){
+    parseCitaions('#articleCitations div p');
+  }
+  if ($('.fullHTML').length>0){
+    HTMLhiglight=Autolinker.link( $('.fullHTML').html(), 
+    {
+        'stripPrefix':false, 'phone': false,
+        replaceFn: function( autolinker, match ){
+          if (match && match.getMatchedText().length<5) return false;
+          return;
+        }
+    });
+    $('.fullHTML').html(HTMLhiglight);
+  }
+
+  if(window.location.hash){
+      var hash = window.location.hash;
+      if($(hash).length){
+          switchTab(hash.substring(1));
+          window.scrollTo(0, 0);
+          setTimeout(function() {
+              $(window).scrollTop($(hash).offset().top);
+          }, 1);
+          return false;
+      }
+  }
+});
+
+        </script>
+
+  <div class="views">
+    
+          Просмотров: 
+      459
+            </div>
+  <br/><a target="_blank" href="https://tech.vestnik.shakarim.kz/jour/article/jats/1767">JATS XML</a>
+
+
+<div id="ccLicense26"><br /><br />
+                                                 <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                                                         <img alt="Creative Commons License" style="border-width:0" src="/resources/80x15.png"/>
+                                                 </a>
+                                                 <br/>
+                                                 Контент доступен под лицензией <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0  License</a>.</div>
+
+
+
+
+<script type="text/javascript">
+
+
+function createCitedBy(){
+  var url = "https://tech.vestnik.shakarim.kz/jour/article/citedBy/1767";
+  $.get(url, function(data){
+      if (!data || !data.length) return;
+      var html = '<div class="citedby">';
+      html+= '<h2>Cited By</h2>';
+      for (var i=0; i<data.length; i+=1){
+          html+= '<div class="cite">';
+          html+= '<p><span class="value title"><a target="_blank" rel="nofollow" href="'+data[i]["link"]+'"">'+data[i]["title"]+'</a></span></p>';
+          html+= '<p><span class="value authors">'+data[i]["authors"]+'</span></p>';
+          html+= '<span class="value journal">';
+          if (data[i]["journal"]) html += data[i]["journal"]+', ';
+          if (data[i]["year"]) html += data[i]["year"]+'; ';
+          if (data[i]["volume"]) html += data[i]["volume"];
+          if (data[i]["issue"]) html += '('+data[i]["issue"]+')';
+          if (data[i]["first_page"]) html += ":"+data[i]["first_page"];
+          html+= "</span></p>";
+          html+= '<p><span class="value doi">DOI: <a target="_blank" rel="nofollow" href="'+data[i]["link"]+'"">'+data[i]["doi"]+'</a></span></p>';
+          html+= '</div>';
+
+          
+      }
+      html += '</div>';
+      $("#tab6").html(html);
+      $("#tab-button6 a").text("Cited By ("+data.length+")");
+      $("#tab-button6").show();
+  });
+}
+
+function createScopusCitations(){
+  var url = "https://tech.vestnik.shakarim.kz/jour/article/scopusCitations/1767";
+  $.get(url, function(data){
+    if (!data || !data.length) return;
+    var html = '<div class="citedby">';
+    html+= '<h2>Scopus Cited</h2>';
+    for (var i=0; i<data.length; i+=1){
+        html+= '<div class="cite">';
+        html+= '<p><span class="value title"><a target="_blank" rel="nofollow" href="'+data[i]["link"]+'"">'+data[i]["title"]+'</a></span></p>';
+        html+= '<p><span class="value authors">'+data[i]["authors"]+'</span></p>';
+        html+= '<span class="value journal">';
+        if (data[i]["journal"]) html += data[i]["journal"]+', ';
+        if (data[i]["year"]) html += data[i]["year"]+'; ';
+        if (data[i]["issue"]) html += data[i]["issue"];
+        if (data[i]["volume"]) html += data[i]["volume"];
+        if (data[i]["first_page"]) html += ":"+data[i]["first_page"];
+        html+= ";</span></p>";
+        html+= '<p><span class="value doi">DOI: <a target="_blank" rel="nofollow" href="'+data[i]["link"]+'"">'+data[i]["doi"]+'</a></span></p>';
+        html+= '</div>';
+
+        
+    }
+    html += '</div>';
+    $("#tab8").html(html);
+    $("#tab-button8 a").text("Scopus Cited ("+data.length+")");
+    $("#tab-button8").show();
+  });
+}
+
+function createMetricChart(){
+  var url = "https://tech.vestnik.shakarim.kz/jour/article/metrics/1767";
+  
+  
+  $.get(url, function(data){
+    console.log(1);
+    var ctx = document.getElementById('metricChart');
+    console.log(2);
+    if (!data || !data['months'].length) return;
+    var chart_data = {
+      labels: data['months'],
+      datasets: [{
+        label: 'Статистика',
+        data: data['counts'],
+        fill: false,
+        borderColor: '#ffb400',
+        tension: 0.1
+      }]
+    };
+    
+    new Chart(ctx, {
+      type: "line",
+      data: chart_data
+    });
+  });
+}
+
+
+$(document).ready(function(){
+  var doi = $("meta[name='DC.Identifier.DOI']").attr("content");
+  if (!doi || doi=="undefined") {$("a.block-link").remove()}
+  if ($(".fullHTML").length) createCitationLinks();
+  createCitedBy();
+  createScopusCitations();
+  /*createMetricChart();*/
+  $('#qrcode-thumb').qrcode({width:25, height:25, text:window.location.href} );
+  $('#qrcode').qrcode({width:150, height:150, background: "#f2f2f2", text:window.location.href} );
+});
+
+</script>
+
+<script src="/assets/js/author_highlight.js?v=24424"></script>
+<script src="/assets/js/translit.js"></script>
+<script src="/assets/js/qrcode.js"></script>
+<script src="/assets/js/jquery.qrcode.js"></script>
+
+
+
+
+
+    <br /><br />
+    <div id="pageFooter26">ISSN 2788-7995 (Print)<br/>ISSN 3006-0524 (Online)<br/></div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+try {
+
+
+ym(86620409, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+ym(42558364, "init", {enableAll: true});
+} catch(e) { }
+
+</script>
+<!-- /Yandex.Metrika counter -->
+</div>
+</div>
+
+  <div id="sidebar" class="sidebar">
+    
+<div class="menu" id="sidebarMenu">
+  <ul>
+    <li id="sidebar_submit"><a class="submitArticle" href="https://tech.vestnik.shakarim.kz/jour/author/submit/1">Отправить статью</a></li>    <li id="sidebar_author"><a href="https://tech.vestnik.shakarim.kz/jour/about/submissions#authorGuidelines">Правила для авторов</a></li>
+    <li id="sidebar_editorialc"><a href="https://tech.vestnik.shakarim.kz/jour/pages/view/EditorialC">Редакционная коллегия</a></li>
+    <li id="sidebar_editorials" style="display:none"><a href="https://tech.vestnik.shakarim.kz/jour/pages/view/EditorialS">Редакционный совет</a></li>
+    <li id="sidebar_policy"><a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies#custom-0">Рецензирование</a></li>
+    <li id="sidebar_ethics"><a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies#custom-1">Этика публикаций</a></li>
+  </ul>
+</div>
+    
+
+    <div class="block flex" id="sidebarCrossref">
+            <a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies#openAccessPolicy"  title="Политика свободного доступа" target="_blank" rel="nofollow" class="flexNormal" id="crOA">
+            <img src="/assets/img/OAlogo.svg">
+        </a>
+                            <a class="flexNormal" title="Статьи журнала в Crossref" target="_blank" rel="nofollow" href="http://search.crossref.org/?q=2788-7995" id="crCR">
+                        <img src="/assets/img/bage_crossref.svg">
+            </a>
+        <a class="flexNormal" href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies" target="_blank" rel="nofollow"  id="crAP"><img src="/assets/img/icon_antiplagiat.svg"></a>
+            <div class="noadv">
+            <a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies">* не является рекламой</a>
+        </div>
+    </div>
+
+
+    <div class="block banners">
+            <span class="blockTitle">Индексация журнала</span>
+                <a href="https://www.elibrary.ru/title_about.asp?id=80543" target="_blank" rel="nofollow" order="1"><img src="//cdn.elpub.ru/assets/img/banners/elibrary.jpg"></a>
+            <a href="https://scholar.google.ru/scholar?hl=ru&as_sdt=0%2C5&q=2788-7995&btnG=" target="_blank" rel="nofollow" order="2"><img src="//cdn.elpub.ru/assets/img/banners/googlescholar.jpg"></a>
+            <a href="https://www.lens.org/lens/search/scholar/list?q=source.issn:27887995&p=0&n=10&s=date_published&d=%2B&f=false&e=false&l=en&authorField=author&dateFilterField=publishedYear&orderBy=%2Bdate_published&presentation=false&preview=true&stemmed=true&useAuthorId=false&sourceTitle.must=Bulletin%20of%20Shakarim%20University.%20Technical%20Sciences" target="_blank" rel="nofollow" order="3"><img src="//cdn.elpub.ru/assets/img/banners/lens_120x33.png"></a>
+            <a href="https://www.mendeley.com/search/?query=2788-7995&dgcid=md_homepage" target="_blank" rel="nofollow" order="4"><img src="//cdn.elpub.ru/assets/img/banners/Mendeley.jpg"></a>
+            <a href="https://na.neicon.ru/journal/89397" target="_blank" rel="nofollow" order="5"><img src="//cdn.elpub.ru/assets/img/banners/neuroass120x33.jpg"></a>
+            <a href="https://www.ncste.kz/" target="_blank" rel="nofollow" order="6"><img src="//cdn.elpub.ru/assets/img/banners/ncste.png"></a>
+            <a href="http://rmebrk.kz/magazine/4787#" target="_blank" rel="nofollow" order="7"><img src="//cdn.elpub.ru/assets/img/banners/rmeb.png"></a>
+            <a href="https://www.worldcat.org/search?q=n2%3A2788-7995" target="_blank" rel="nofollow" order="8"><img src="//cdn.elpub.ru/assets/img/banners/worldcat.jpg"></a>
+            <a href="https://journals.indexcopernicus.com/search/details?id=126769" target="_blank" rel="nofollow" order="9"><img src="//cdn.elpub.ru/assets/img/banners/copernicus.jpg"></a>
+            <a href="https://www.gov.kz/memleket/entities/quality?lang=ru" target="_blank" rel="nofollow" order="10"><img src="//cdn.elpub.ru/assets/img/banners/kaz.png"></a>
+            <a href="#" target="_blank" rel="nofollow" order="11"><img src="//cdn.elpub.ru/assets/img/banners/crossref2.png"></a>
+            <a href="https://www.semanticscholar.org/venue?name=Bulletin%20of%20Shakarim%20University%20Technical%20Sciences" target="_blank" rel="nofollow" order="12"><img src="//cdn.elpub.ru/assets/img/banners/seman.png"></a>
+            <a href="https://www.scilit.com/sources/121293" target="_blank" rel="nofollow" order="13"><img src="//cdn.elpub.ru/assets/img/banners/Scilit_120x33.png"></a>
+            <a href="https://cyberleninka.ru/" target="_blank" rel="nofollow" order="14"><img src="//cdn.elpub.ru/assets/img/banners/cyberleninka120x33.jpg"></a>
+                <div class="noadv">
+            <a href="https://tech.vestnik.shakarim.kz/jour/about/editorialPolicies">* не является рекламой</a>
+        </div>
+        </div>
+  
+    <div class="block popular">
+        <span class="blockTitle">Популярные статьи</span>
+
+                <div class="inner" id="sidebar-popular" >
+                            <div class="pop">
+                                                            
+                    <div class="title"><a href="https://tech.vestnik.shakarim.kz/jour/article/view/1598">
+                        ВЛИЯНИЕ СОСТАВА ЭКСТРАКЦИОННОЙ ФОСФОРНОЙ КИСЛОТЫ НА КАЧЕСТВО СЛОЖНОГО NP(S) УДОБРЕНИЯ СУЛЬФОАММОФОС
+                    </a></div>
+                    <span class="issue">№ 2(18) (2025)</span>
+                </div>
+                    <div class="separator"></div>
+                            <div class="pop">
+                                                            
+                    <div class="title"><a href="https://tech.vestnik.shakarim.kz/jour/article/view/442">
+                        Ферменты микроорганизмов. Протеазы молочнокислых бактерий.
+                    </a></div>
+                    <span class="issue">№ 3(11) (2023)</span>
+                </div>
+                    <div class="separator"></div>
+                            <div class="pop">
+                                                            
+                    <div class="title"><a href="https://tech.vestnik.shakarim.kz/jour/article/view/314">
+                        МИКРОКАПСУЛИРОВАНИЕ – ТЕХНОЛОГИИ И МЕТОДЫ
+                    </a></div>
+                    <span class="issue">№ 3(7) (2022)</span>
+                </div>
+                    <div class="separator"></div>
+                            <div class="pop">
+                                                            
+                    <div class="title"><a href="https://tech.vestnik.shakarim.kz/jour/article/view/284">
+                        НАЦИОНАЛЬНЫЙ МОЛОЧНЫЙ ПРОДУКТ – КУРТ
+                    </a></div>
+                    <span class="issue">№ 4(4) (2021)</span>
+                </div>
+                    <div class="separator"></div>
+                            <div class="pop">
+                                                            
+                    <div class="title"><a href="https://tech.vestnik.shakarim.kz/jour/article/view/209">
+                        Биосенсоры, применяемые в пищевой промышленности
+                    </a></div>
+                    <span class="issue">№ 2(2) (2021)</span>
+                </div>
+                    <div class="separator"></div>
+                            <div class="pop">
+                                                            
+                    <div class="title"><a href="https://tech.vestnik.shakarim.kz/jour/article/view/6">
+                        СРАВНИТЕЛЬНАЯ ХАРАКТЕРИСТИКА ФРУКТОВОЙ ПАСТИЛЫ ПО ПИЩЕВОЙ ЦЕННОСТИ ОТНОСИТЕЛЬНО БЕЗОПАСНОСТИ ПРИ ДИАБЕТЕ
+                    </a></div>
+                    <span class="issue">№ 3(91) (2020)</span>
+                </div>
+                    <div class="separator"></div>
+                    </div>
+            </div>
+
+                    <div class="block chief">
+            <p class="blockTitle" id="pblkChief">Главный редактор</p>
+                        <a href="https://orcid.org/0000-0002-8556-9954" target="_blank" style="line-height:0; display:block; margin-bottom: 20px">
+                <img src="https://tech.vestnik.shakarim.kz/public/journals/1/mobileEditorPhoto_ru_RU.jpg" />
+            </a>
+                                        <a href="https://orcid.org/0000-0002-8556-9954" target="_blank"  id="ablkChief">
+                   Есимбеков Жанибек Серикбекович
+                </a>
+                    </div>
+        
+
+<div class="block" id="sidebarRTArticleTools">
+
+    <span class="blockTitle">Инструменты статьи</span>
+                                <div class="articleToolItem">
+            <img src="https://tech.vestnik.shakarim.kz/plugins/blocks/readingTools/icons/findingReferences.png" class="articleToolIcon" /> <a href="javascript:openRTWindow('https://tech.vestnik.shakarim.kz/jour/rt/findingReferences/1767/0');">Поиск ссылок</a>
+        </div>
+                    <div class="articleToolItem">
+            <img src="https://tech.vestnik.shakarim.kz/plugins/blocks/readingTools/icons/emailArticle.png" class="articleToolIcon" />
+            Послать статью по эл. почте <span style="font-size: 0.8em">(Необходимо имя пользователя (логин))</span>        </div>
+                <div class="articleToolItem">
+            <img src="https://tech.vestnik.shakarim.kz/plugins/blocks/readingTools/icons/emailArticle.png" class="articleToolIcon" />
+            Связаться с автором <span style="font-size: 0.8em">(Необходимо имя пользователя (логин))</span>        </div>
+        </div>
+<div class="block" id="sidebarRTAuthorBios">
+    <span class="blockTitle">
+                    Об авторах
+            </span>
+        <div id="authorBio">
+    <p>
+        <em>К. Е. Икласова</em><br />
+                        Северо-Казахстанский университет имени М. Козыбаева        <br/>Казахстан    </p>
+
+    <p><p><strong>Кайнижамал Есимсеитовна Икласова </strong>– PhD, доцент кафедры «Информационно-коммуникационные технологии»</p><p>150000, г. Петропавловск, ул. Пушкина, 86</p></p>
+    </div>
+    <div class="separator"></div>
+        <div id="authorBio">
+    <p>
+        <em>А. К. Шайханова</em><br />
+                        Евразийский национальный университет имени Л.Н. Гумилева        <br/>Казахстан    </p>
+
+    <p><p><strong>Айгуль Кайрулаевна Шайханова </strong>– PhD, и.о. профессора кафедры информационной безопасности</p><p>100000, г. Астана, ул. Сатбаева, 2</p></p>
+    </div>
+    <div class="separator"></div>
+        <div id="authorBio">
+    <p>
+        <em>М. Ж. Базарова</em><br />
+                        Восточно-Казахстанский университет имени С. Аманжолова        <br/>Казахстан    </p>
+
+    <p><p><strong>Мадина Жомартовна</strong> <strong>Базарова </strong>– PhD, ассоциированный профессор кафедры «Компьютерное моделирование и информационные технологии»</p><p>070002, г. Усть-Каменогорск, ул. 30-й Гвардейской дивизии, 34</p></p>
+    </div>
+    <div class="separator"></div>
+        <div id="authorBio">
+    <p>
+        <em>Р. М. Ташибаев</em><br />
+                        Северо-Казахстанский университет имени М. Козыбаева            </p>
+
+    <p><p><strong>Рустем Маратович</strong> <strong>Ташибаев </strong>– докорант</p><p>150000, г. Петропавловск, ул. Пушкина, 86</p></p>
+    </div>
+    <div class="separator"></div>
+        <div id="authorBio">
+    <p>
+        <em>А. С. Казанбаева</em><br />
+                        Северо-Казахстанский университет имени М. Козыбаева        <br/>Казахстан    </p>
+
+    <p><p><strong>Альбина Советовна</strong> <strong>Казанбаева </strong>– PhD, доцент кафедры «Строительство и дизайн»</p><p>150000, г. Петропавловск, ул. Пушкина, 86</p></p>
+    </div>
+    
+    </div>
+<div class="block" id="sidebarKeywordCloud">
+    <span class="blockTitle">Облако тегов</span>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="автоматизация"'><span style="font-size: 108.33333333333%;">автоматизация</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="безопасность"'><span style="font-size: 158.33333333333%;">безопасность</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="износостойкость"'><span style="font-size: 125%;">износостойкость</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="искусственный интеллект"'><span style="font-size: 141.66666666667%;">искусственный интеллект</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="йогурт"'><span style="font-size: 104.16666666667%;">йогурт</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="качество"'><span style="font-size: 129.16666666667%;">качество</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="кибербезопасность"'><span style="font-size: 120.83333333333%;">кибербезопасность</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="козье молоко"'><span style="font-size: 104.16666666667%;">козье молоко</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="машинное обучение"'><span style="font-size: 166.66666666667%;">машинное обучение</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="микротвердость"'><span style="font-size: 116.66666666667%;">микротвердость</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="молоко"'><span style="font-size: 141.66666666667%;">молоко</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="молочнокислые бактерии"'><span style="font-size: 108.33333333333%;">молочнокислые бактерии</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="пищевая безопасность"'><span style="font-size: 129.16666666667%;">пищевая безопасность</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="пищевая ценность"'><span style="font-size: 170.83333333333%;">пищевая ценность</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="температура"'><span style="font-size: 104.16666666667%;">температура</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="технология"'><span style="font-size: 145.83333333333%;">технология</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="ферментация"'><span style="font-size: 108.33333333333%;">ферментация</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="функциональные продукты"'><span style="font-size: 116.66666666667%;">функциональные продукты</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="химический состав"'><span style="font-size: 108.33333333333%;">химический состав</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="экстракт"'><span style="font-size: 104.16666666667%;">экстракт</span></a>
+        
+    <a href='https://tech.vestnik.shakarim.kz/jour/search?subject="энергоэффективность"'><span style="font-size: 108.33333333333%;">энергоэффективность</span></a>
+    </div> <div class="block" id="notification">
+    <span class="blockTitle">Уведомления</span>
+    <ul>
+                    <li><a href="https://tech.vestnik.shakarim.kz/jour/notification">Посмотреть</a></li>
+            <li><a href="https://tech.vestnik.shakarim.kz/jour/notification/subscribeMailList">Подписаться</a></li>
+            </ul>
+</div>
+<div class="block" id="sidebarWebFeed">
+    <!--<span class="blockTitle">RSS</span>-->
+    <a href="https://tech.vestnik.shakarim.kz/jour/gateway/plugin/WebFeedGatewayPlugin/atom">
+    <img src="https://tech.vestnik.shakarim.kz/plugins/generic/webFeed/templates/images/atom20_logo.png" alt="Логотип Atom" border="0" /></a>
+</div>
+  </div>
+
+
+<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="footer">
+  <div class="container flex">
+    <div class="left">
+                <p>071412, Республика Казахстан, область Абай, г. Семей, ул. Глинки, 20А<br />тел.: +7 (7222) 31 32 49<br />e-mail: rio@shakarim.kz</p>
+                            </div>
+    <div class="right">
+        создано и поддерживается <a target="blank" href="http://neicon.ru">NEICON</a><br/>(лаборатория <a target="blank" href="http://elpub.ru">Elpub</a>)
+        <a class="rss" href="https://tech.vestnik.shakarim.kz/jour/gateway/plugin/WebFeedGatewayPlugin/rss"><img src="/assets/img/RSS.svg"></a>
+    </div>
+  </div>
+</div>
+<a id="totop"></a>
+
+
+</div>
+<div id="cookie-banner-wrapper" style="display: none;">
+    <div id="cookie-popup">
+        <center>
+            <h4>Использование куки-файлов</h4>
+            <a href="#" class="close-popup" onClick="return PopUp('hide')"></a>
+                            <p>Для оптимальной работы сайта журнала и оптимизации его дизайна мы используем куки-файлы, а также сервис Яндекс.Метрика для сбора и статистического анализа данных о посещении Вами страниц сайта. Продолжая использовать сайт, Вы соглашаетесь на использование куки-файлов и указанного сервиса.</p>
+                                    </center>
+    </div>
+</div>
+
+
+<div class="popupWrapper" id="popupWrapper" >
+    <div class="popup" >
+        <p style="text-align: center;"><strong>Құрметті авторлар! 2026 жылдың 1-ші нөміріне "Тамақ инженериясы және биотехнология" және "Автоматтандыру және ақпараттық технологиялар" бағыттары бойынша мақалаларды қабылдау аяқталды.</strong></p><p style="text-align: center;"> </p><p style="text-align: center;"><strong>Уважаемые авторы! Прием статей </strong><strong>по направлениям "Пищевая инженерия и биотехнология" и "Автоматизация и информационные технологии" </strong><strong>в 1-й номер 2026 года закрыт.</strong></p><p style="text-align: center;"> </p><p style="text-align: center;"><strong>Dear authors! The admission of articles in the areas of "Food Engineering and biotechnology" and "Automation and Information Technology" in the 1st issue of 2026 is closed.</strong></p><p style="text-align: center;"> </p>
+    </div>
+    <a class="popupClose" onclick="$('#popupWrapper').hide()">X</a>
+</div>
+<script type="text/javascript">
+
+    if ($.cookie('elpub_popup') != '1') {
+        $(function(){
+            $("#popupWrapper").show();
+            $.cookie('elpub_popup', '1', {expires:"100 "});
+        });
+    }
+
+</script>
+
+
+<script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/slick.min.js"></script>
+<script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/select2.min.js"></script>
+<script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/i18n/ru.js"></script>
+<script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/script.js?v=20260123154505"></script>
+<script type="text/javascript" src="https://tech.vestnik.shakarim.kz/styles/style.js"></script>
+<script type="text/javascript" src="https://tech.vestnik.shakarim.kz/assets/js/cookie-banner-popup.js"></script>
+
+</body>
+</html>
+<!-- URL: https://tech.vestnik.shakarim.kz -->
