@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3508" height="827" viewBox="0 0 3508 827">
+  <rect x="0" y="0" width="3508" height="827" fill="#EFF6FF"/>
+  <text x="48" y="64" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="#0F172A">Рисунок 1.3 — Поток данных (персонализация + объяснимость)</text>
+  <line x1="48" y1="92" x2="3460" y2="92" stroke="#C7D2FE" stroke-width="6"/>
+<rect x="110" y="160" width="613" height="180" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="128" y="178" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="146" y="204" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">1</text>
+<text x="182" y="214" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="182" dy="0">События пользователя</tspan>
+  <tspan x="182" dy="34">(просмотры/поиск/прогресс)</tspan>
+</text>
+<rect x="778" y="160" width="613" height="180" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="796" y="178" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="814" y="204" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">2</text>
+<text x="850" y="214" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="850" dy="0">Сбор</tspan>
+  <tspan x="850" dy="34">данных</tspan>
+</text>
+<rect x="1446" y="160" width="613" height="180" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="1464" y="178" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="1482" y="204" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">3</text>
+<text x="1518" y="214" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="1518" dy="0">Формирование</tspan>
+  <tspan x="1518" dy="34">профиля</tspan>
+</text>
+<rect x="2114" y="160" width="613" height="180" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="2132" y="178" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="2150" y="204" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">4</text>
+<text x="2186" y="214" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="2186" dy="0">Генерация</tspan>
+  <tspan x="2186" dy="34">рекомендаций</tspan>
+</text>
+<rect x="2782" y="160" width="613" height="180" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="2800" y="178" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="2818" y="204" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">5</text>
+<text x="2854" y="214" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="2854" dy="0">UI‑карточки</tspan>
+  <tspan x="2854" dy="34">+ «почему рекомендовано»</tspan>
+</text>
+<line x1="737" y1="250.0" x2="764" y2="250.0" stroke="#2563EB" stroke-width="12" stroke-linecap="round"/>
+<line x1="1405" y1="250.0" x2="1432" y2="250.0" stroke="#2563EB" stroke-width="12" stroke-linecap="round"/>
+<line x1="2073" y1="250.0" x2="2100" y2="250.0" stroke="#2563EB" stroke-width="12" stroke-linecap="round"/>
+<line x1="2741" y1="250.0" x2="2768" y2="250.0" stroke="#2563EB" stroke-width="12" stroke-linecap="round"/>
+<rect x="2948" y="380" width="430" height="115" rx="18" ry="18" fill="#FFFFFF" stroke="#93C5FD" stroke-width="3"/>
+<text x="2966" y="426" font-family="Inter, Arial, sans-serif" font-size="24" fill="#0F172A">Пояснение в UI повышает</text>
+<text x="2966" y="458" font-family="Inter, Arial, sans-serif" font-size="24" fill="#0F172A">доверие к рекомендациям</text>
+
+  <text x="3460" y="803" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="24" fill="#64748B">Источник: составлено автором.</text>
+</svg>

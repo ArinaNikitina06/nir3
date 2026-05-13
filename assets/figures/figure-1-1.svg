@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3508" height="827" viewBox="0 0 3508 827">
+  <rect x="0" y="0" width="3508" height="827" fill="#EFF6FF"/>
+  <text x="48" y="64" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="#0F172A">Рисунок 1.1 — Сценарий выбора курса (обобщённая схема)</text>
+  <line x1="48" y1="92" x2="3460" y2="92" stroke="#C7D2FE" stroke-width="6"/>
+<rect x="64" y="140" width="536" height="170" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="82" y="158" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="100" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">1</text>
+<text x="136" y="194" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="136" dy="0">Определение</tspan>
+  <tspan x="136" dy="34">цели/ролей</tspan>
+</text>
+<rect x="632" y="140" width="536" height="170" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="650" y="158" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="668" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">2</text>
+<text x="704" y="194" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="704" dy="0">Каталог /</tspan>
+  <tspan x="704" dy="34">витрина</tspan>
+</text>
+<rect x="1200" y="140" width="536" height="170" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="1218" y="158" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="1236" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">3</text>
+<text x="1272" y="194" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="1272" dy="0">Фильтры /</tspan>
+  <tspan x="1272" dy="34">поиск</tspan>
+</text>
+<rect x="1768" y="140" width="536" height="170" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="1786" y="158" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="1804" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">4</text>
+<text x="1840" y="194" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="1840" dy="0">Сравнение</tspan>
+  <tspan x="1840" dy="34">карточек</tspan>
+</text>
+<rect x="2336" y="140" width="536" height="170" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="2354" y="158" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="2372" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">5</text>
+<text x="2408" y="194" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="2408" dy="0">Детальная</tspan>
+  <tspan x="2408" dy="34">страница</tspan>
+</text>
+<rect x="2904" y="140" width="536" height="170" rx="22" ry="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3"/>
+<rect x="2922" y="158" width="36" height="36" rx="18" ry="18" fill="#1D4ED8"/>
+<text x="2940" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">6</text>
+<text x="2976" y="194" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+  <tspan x="2976" dy="0">Запись /</tspan>
+  <tspan x="2976" dy="34">начало</tspan>
+  <tspan x="2976" dy="34">обучения</tspan>
+</text>
+<line x1="610" y1="225.0" x2="622" y2="225.0" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+<line x1="1178" y1="225.0" x2="1190" y2="225.0" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+<line x1="1746" y1="225.0" x2="1758" y2="225.0" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+<line x1="2314" y1="225.0" x2="2326" y2="225.0" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+<line x1="2882" y1="225.0" x2="2894" y2="225.0" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+
+  <text x="3460" y="803" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="24" fill="#64748B">Источник: составлено автором.</text>
+</svg>
