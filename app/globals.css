@@ -4,9 +4,17 @@
 
 :root {
   color-scheme: light;
+  --surface: #f4f6fb;
+  --surface-elevated: #ffffff;
+  --sidebar: #0f172a;
+  --sidebar-muted: #94a3b8;
+  --accent: #0d9488;
+  --accent-soft: #ccfbf1;
+  --ring: #0d9488;
+  --border: #e2e8f0;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  @apply antialiased text-slate-900;
+  background: var(--surface);
 }
-

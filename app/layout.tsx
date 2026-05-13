@@ -1,25 +1,28 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { Providers } from "@/components/providers";
-import { Navigation } from "@/components/navigation";
+import { AppShell } from "@/components/app-shell";
+
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-sans",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
-  title: "Recommendation UI Prototype",
-  description: "Next.js (App Router) prototype for course recommendations"
+  title: "НИР3 — персональные курсы",
+  description: "Прототип платформы с рекомендациями курсов"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru">
-      <body>
+    <html lang="ru" className={inter.variable}>
+      <body className="font-sans">
         <Providers>
-          <div className="min-h-dvh">
-            <Navigation />
-            <main className="mx-auto max-w-7xl px-4 py-8">{children}</main>
-          </div>
+          <AppShell>{children}</AppShell>
         </Providers>
       </body>
     </html>
   );
 }
-

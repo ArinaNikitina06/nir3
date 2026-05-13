@@ -39,8 +39,8 @@ export async function getPersonalizedRecommendations(
 
   // Получаем просмотренные курсы для анализа схожести
   const viewedCourseIds = interactions
-    .filter((i) => i.type === "view")
-    .map((i) => i.courseId);
+    .filter((i) => i.type === "view" && i.courseId != null)
+    .map((i) => i.courseId as string);
   const viewedCourses =
     viewedCourseIds.length > 0
       ? await prisma.course.findMany({
@@ -110,10 +110,10 @@ export async function getPersonalizedRecommendations(
     }
 
     // 4. Популярность курса (вес: 15)
-    const popularityScore =
-      (course.studentsCount * 0.1 + course.rating * 2) / 10;
+    const studentsCount = course._count.enrollments;
+    const popularityScore = (studentsCount * 0.1 + course.rating * 2) / 10;
     score += Math.min(popularityScore, 15);
-    if (course.rating >= 4.5 && course.studentsCount > 100) {
+    if (course.rating >= 4.5 && studentsCount > 100) {
       reasons.push("Популярный и высоко оцененный курс");
     }
 

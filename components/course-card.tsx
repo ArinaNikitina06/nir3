@@ -3,7 +3,7 @@ import type { Course } from "@/types/course";
 
 export function CourseCard({ course }: { course: Course }) {
   return (
-    <article className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+    <article className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-card">
       <Link href={`/courses/${course.id}`} className="block">
         <div className="relative aspect-[16/9] bg-slate-100">
           {course.imageUrl ? (

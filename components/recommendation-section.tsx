@@ -48,11 +48,7 @@ export function RecommendationSection({
   return (
     <section className="space-y-3">
       <div className="flex items-baseline justify-between gap-3">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        <p className="text-xs text-slate-500">
-          API:{" "}
-          <code className="rounded bg-slate-100 px-1">/api/recommendations</code>
-        </p>
+        <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
       </div>
 
       {loading && <p className="text-sm text-slate-600">Загрузка…</p>}
@@ -62,9 +58,9 @@ export function RecommendationSection({
         </p>
       )}
       {!loading && !error && data && (
-        <div className="flex gap-4 overflow-x-auto pb-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((course) => (
-            <div key={course.id} className="min-w-[260px] max-w-[260px]">
+            <div key={course.id} className="min-w-0">
               <CourseCard course={course} />
               {course.recommendation?.reasons?.length ? (
                 <div className="mt-2 text-xs text-slate-500">
