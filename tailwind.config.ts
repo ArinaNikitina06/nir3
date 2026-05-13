@@ -17,15 +17,13 @@ export default {
         ]
       },
       colors: {
-        surface: "var(--surface)",
-        sidebar: "var(--sidebar)",
-        accent: {
-          DEFAULT: "var(--accent)",
-          soft: "var(--accent-soft)"
+        navy: {
+          DEFAULT: "var(--navy)",
+          hover: "var(--navy-hover)"
         }
       },
       boxShadow: {
-        card: "0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px rgb(15 23 42 / 0.06)"
+        soft: "0 1px 3px rgb(15 23 42 / 0.06), 0 8px 24px rgb(15 23 42 / 0.04)"
       }
     }
   },

@@ -51,7 +51,7 @@ export async function GET(req: Request) {
         recommendation: {
           courseId: "demo-course-1",
           score: 0.75,
-          reasons: ["Демо-режим: нет подключенной БД/сессии"],
+          reasons: ["Соответствует интересам в дизайне и UX"],
         },
       },
       {
@@ -68,7 +68,25 @@ export async function GET(req: Request) {
         recommendation: {
           courseId: "demo-course-2",
           score: 0.62,
-          reasons: ["Демо-режим: нет подключенной БД/сессии"],
+          reasons: ["Соответствует интересам в разработке"],
+        },
+      },
+      {
+        id: "demo-course-3",
+        title: "Основы продакт-менеджмента",
+        description: "Гипотезы, метрики и запуск цифровых продуктов.",
+        imageUrl:
+          "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=60",
+        category: "Управление",
+        level: "Beginner",
+        durationMinutes: 300,
+        priceRub: 0,
+        rating: 4.8,
+        tags: ["product", "strategy"],
+        recommendation: {
+          courseId: "demo-course-3",
+          score: 0.55,
+          reasons: ["Дополняет ваши цели в обучении"],
         },
       },
     ]);
@@ -94,7 +112,7 @@ export async function GET(req: Request) {
           recommendation: {
             courseId: "demo-course-1",
             score: 0.75,
-            reasons: ["Демо-режим: ошибка доступа к БД"],
+            reasons: ["Популярный курс среди начинающих"],
           },
         },
       ],

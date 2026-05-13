@@ -3,22 +3,19 @@ import { ProfileSidebar } from "@/components/profile-sidebar";
 
 export default function ProfileLayout({ children }: { children: ReactNode }) {
   return (
-    <section className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-3xl font-semibold">Настройки</h1>
-        <p className="text-slate-600">
-          Управляйте настройками аккаунта и предпочтениями.
-        </p>
+    <section className="space-y-8">
+      <header className="space-y-1">
+        <h1 className="text-3xl font-semibold text-navy sm:text-4xl">Настройки</h1>
+        <p className="text-[var(--muted)]">Управляйте аккаунтом и предпочтениями обучения.</p>
       </header>
 
-      <div className="grid gap-6 md:grid-cols-[240px_1fr]">
-        <aside>
+      <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
+        <aside className="lg:sticky lg:top-24 lg:self-start">
           <ProfileSidebar />
         </aside>
 
-        <div className="space-y-6">{children}</div>
+        <div className="space-y-8">{children}</div>
       </div>
     </section>
   );
 }
-

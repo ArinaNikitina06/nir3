@@ -1,31 +1,34 @@
+import Link from "next/link";
+
 export default function Page() {
   return (
-    <section className="mx-auto max-w-md space-y-6">
-      <div className="space-y-2 text-center">
-        <div className="mx-auto grid size-10 place-items-center rounded-xl bg-slate-900 text-white">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            className="size-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M22 10L12 5 2 10l10 5 10-5Z" />
-            <path d="M6 12v5c3 2 9 2 12 0v-5" />
+    <section className="mx-auto w-full max-w-md space-y-8">
+      <div className="space-y-3 text-center">
+        <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-navy text-white shadow-soft">
+          <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden>
+            <path
+              d="M4 10 12 6l8 4-8 4-8-4Z"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8 12v4.5c0 1.5 2.5 2.5 4 2.5s4-1 4-2.5V12"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
           </svg>
         </div>
-        <h1 className="text-2xl font-semibold">Вход в систему</h1>
-        <p className="text-sm text-slate-600">Введите email для входа в аккаунт</p>
+        <h1 className="text-2xl font-semibold text-navy">Вход в систему</h1>
+        <p className="text-sm text-[var(--muted)]">Введите свои данные для входа</p>
       </div>
 
-      <form className="space-y-4 rounded-xl border border-slate-200 bg-white p-6">
-        <label className="block space-y-1">
-          <div className="text-sm font-medium">Email</div>
+      <form className="space-y-5 rounded-2xl border border-[var(--border)] bg-white p-8 shadow-soft">
+        <label className="block space-y-2">
+          <span className="text-sm font-medium text-navy">Email</span>
           <input
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm text-navy outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
             placeholder="name@example.com"
             type="email"
             name="email"
@@ -33,10 +36,10 @@ export default function Page() {
           />
         </label>
 
-        <label className="block space-y-1">
-          <div className="text-sm font-medium">Пароль</div>
+        <label className="block space-y-2">
+          <span className="text-sm font-medium text-navy">Пароль</span>
           <input
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm text-navy outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
             type="password"
             name="password"
             autoComplete="current-password"
@@ -44,25 +47,21 @@ export default function Page() {
         </label>
 
         <button
-          className="w-full rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+          className="w-full rounded-xl bg-navy py-3 text-sm font-semibold text-white transition hover:bg-navy-hover"
           type="button"
         >
           Войти
         </button>
 
-        <div className="pt-2 text-center text-sm text-slate-600">
-          Нет аккаунта?{" "}
-          <a className="font-medium text-slate-900 underline" href="/auth/signup">
-            Зарегистрироваться
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
+          <a className="font-medium text-[var(--muted)] hover:text-navy" href="#">
+            Забыли пароль?
           </a>
+          <Link href="/auth/signup" className="font-semibold text-navy hover:underline">
+            Регистрация
+          </Link>
         </div>
       </form>
-
-      <p className="text-xs text-slate-500">
-        Технически: NextAuth endpoint{" "}
-        <code className="rounded bg-slate-100 px-1 py-0.5">/api/auth/[...nextauth]</code>.
-      </p>
     </section>
   );
 }
-

@@ -4,17 +4,15 @@
 
 :root {
   color-scheme: light;
-  --surface: #f4f6fb;
+  --surface: #f8fafc;
   --surface-elevated: #ffffff;
-  --sidebar: #0f172a;
-  --sidebar-muted: #94a3b8;
-  --accent: #0d9488;
-  --accent-soft: #ccfbf1;
-  --ring: #0d9488;
   --border: #e2e8f0;
+  --navy: #1e293b;
+  --navy-hover: #0f172a;
+  --muted: #64748b;
 }
 
 body {
   @apply antialiased text-slate-900;
-  background: var(--surface);
+  background: var(--surface-elevated);
 }

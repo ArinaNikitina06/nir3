@@ -1,16 +1,34 @@
+import Link from "next/link";
+
 export default function Page() {
   return (
-    <section className="mx-auto max-w-md space-y-6">
-      <div className="space-y-2 text-center">
-        <h1 className="text-2xl font-semibold">Регистрация</h1>
-        <p className="text-sm text-slate-600">Создайте аккаунт, чтобы сохранять прогресс</p>
+    <section className="mx-auto w-full max-w-md space-y-8">
+      <div className="space-y-3 text-center">
+        <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-navy text-white shadow-soft">
+          <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden>
+            <path
+              d="M4 10 12 6l8 4-8 4-8-4Z"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8 12v4.5c0 1.5 2.5 2.5 4 2.5s4-1 4-2.5V12"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+        <h1 className="text-2xl font-semibold text-navy">Регистрация</h1>
+        <p className="text-sm text-[var(--muted)]">Создайте аккаунт, чтобы сохранять прогресс</p>
       </div>
 
-      <form className="space-y-4 rounded-xl border border-slate-200 bg-white p-6">
-        <label className="block space-y-1">
-          <div className="text-sm font-medium">Email</div>
+      <form className="space-y-5 rounded-2xl border border-[var(--border)] bg-white p-8 shadow-soft">
+        <label className="block space-y-2">
+          <span className="text-sm font-medium text-navy">Email</span>
           <input
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
             placeholder="name@example.com"
             type="email"
             name="email"
@@ -18,10 +36,10 @@ export default function Page() {
           />
         </label>
 
-        <label className="block space-y-1">
-          <div className="text-sm font-medium">Имя пользователя</div>
+        <label className="block space-y-2">
+          <span className="text-sm font-medium text-navy">Имя пользователя</span>
           <input
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
             placeholder="arina_designer"
             type="text"
             name="name"
@@ -29,26 +47,30 @@ export default function Page() {
           />
         </label>
 
+        <label className="block space-y-2">
+          <span className="text-sm font-medium text-navy">Пароль</span>
+          <input
+            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
+            type="password"
+            name="password"
+            autoComplete="new-password"
+          />
+        </label>
+
         <button
-          className="w-full rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+          className="w-full rounded-xl bg-navy py-3 text-sm font-semibold text-white transition hover:bg-navy-hover"
           type="button"
         >
           Зарегистрироваться
         </button>
 
-        <div className="pt-2 text-center text-sm text-slate-600">
+        <div className="text-center text-sm text-[var(--muted)]">
           Уже есть аккаунт?{" "}
-          <a className="font-medium text-slate-900 underline" href="/auth/signin">
+          <Link href="/auth/signin" className="font-semibold text-navy hover:underline">
             Войти
-          </a>
+          </Link>
         </div>
       </form>
-
-      <p className="text-xs text-slate-500">
-        Технически: регистрация выполняется через{" "}
-        <code className="rounded bg-slate-100 px-1 py-0.5">/api/auth/signup</code>.
-      </p>
     </section>
   );
 }
-

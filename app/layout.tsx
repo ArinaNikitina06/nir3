@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "НИР3 — персональные курсы",
-  description: "Прототип платформы с рекомендациями курсов"
+  title: "EduFlow — онлайн-обучение",
+  description: "Платформа персональных рекомендаций курсов"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
