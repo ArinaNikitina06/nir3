@@ -1,11 +1,10 @@
 export default function Page() {
   return (
-    <section className="space-y-2">
-      <h1 className="text-2xl font-semibold">Уведомления</h1>
-      <p className="text-slate-600">
-        Раздел настроек профиля. В макетах может быть вкладкой внутри <code className="rounded bg-slate-100 px-1">/profile</code> или отдельной страницей.
+    <section className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-soft sm:p-8">
+      <h1 className="text-xl font-semibold text-navy">Уведомления</h1>
+      <p className="mt-2 text-sm text-[var(--muted)]">
+        Настройка email и push-уведомлений (заглушка прототипа).
       </p>
     </section>
   );
 }
-
