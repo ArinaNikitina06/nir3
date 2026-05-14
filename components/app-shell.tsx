@@ -13,10 +13,6 @@ const nav = [
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? "";
 
-  if (pathname.startsWith("/auth")) {
-    return <>{children}</>;
-  }
-
   return (
     <div className="min-h-dvh bg-white">
       <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-white/95 backdrop-blur-sm">

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 import { ProfileSidebar } from "@/components/profile-sidebar";
 
 export default function ProfileLayout({ children }: { children: ReactNode }) {
@@ -11,7 +12,9 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
 
       <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
         <aside className="lg:sticky lg:top-24 lg:self-start">
-          <ProfileSidebar />
+          <Suspense fallback={<div className="h-48 rounded-2xl border border-[var(--border)] bg-white shadow-soft" aria-hidden />}>
+            <ProfileSidebar />
+          </Suspense>
         </aside>
 
         <div className="space-y-8">{children}</div>
