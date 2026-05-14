@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 const inputClass =
-  "w-full rounded-xl border border-[var(--border)] bg-slate-50/80 px-4 py-3 text-sm text-navy outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200/80";
+  "h-10 w-full rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20";
+
+const labelClass = "text-sm font-medium text-gray-900";
 
 export default function Page() {
   const router = useRouter();
@@ -56,29 +58,27 @@ export default function Page() {
   }
 
   return (
-    <section className="space-y-8">
-      <header className="space-y-2 text-left">
-        <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-[2rem]">Регистрация</h1>
-        <p className="text-sm leading-relaxed text-[var(--muted)]">
-          Создайте аккаунт EduFlow — сохраняйте курсы и прогресс в одном месте.
-        </p>
-      </header>
-
+    <section>
       <form
         onSubmit={onSubmit}
-        className="space-y-6 rounded-3xl border border-[var(--border)] bg-white p-8 shadow-soft sm:p-9"
+        className="rounded-xl border border-gray-200 bg-white p-8 shadow-md shadow-gray-900/5"
       >
+        <div className="mb-8 space-y-2 text-center">
+          <h1 className="text-[32px] font-bold leading-[1.2] tracking-tight text-gray-900">Регистрация</h1>
+          <p className="text-base leading-relaxed text-gray-500">Создайте аккаунт, чтобы сохранять курсы и прогресс</p>
+        </div>
+
         {error ? (
-          <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800 ring-1 ring-red-100" role="alert">
+          <p className="mb-6 rounded-lg bg-red-50 px-3 py-2.5 text-sm text-red-800 ring-1 ring-red-100" role="alert">
             {error}
           </p>
         ) : null}
 
         <div className="space-y-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">Контакты</p>
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-blue-600">Контакты</p>
           <div className="space-y-4">
-            <label className="block space-y-2">
-              <span className="text-sm font-medium text-navy">Email</span>
+            <label className="block space-y-1.5">
+              <span className={labelClass}>Email</span>
               <input
                 className={inputClass}
                 placeholder="name@example.com"
@@ -91,8 +91,8 @@ export default function Page() {
               />
             </label>
 
-            <label className="block space-y-2">
-              <span className="text-sm font-medium text-navy">Имя пользователя</span>
+            <label className="block space-y-1.5">
+              <span className={labelClass}>Имя пользователя</span>
               <input
                 className={inputClass}
                 placeholder="arina_designer"
@@ -106,13 +106,13 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="h-px bg-[var(--border)]" aria-hidden />
+        <div className="my-6 h-px bg-gray-100" aria-hidden />
 
         <div className="space-y-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">Пароль</p>
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-violet-600">Пароль</p>
           <div className="space-y-4">
-            <label className="block space-y-2">
-              <span className="text-sm font-medium text-navy">Пароль</span>
+            <label className="block space-y-1.5">
+              <span className={labelClass}>Пароль</span>
               <input
                 className={inputClass}
                 type="password"
@@ -123,11 +123,11 @@ export default function Page() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <span className="text-xs text-[var(--muted)]">Не менее 8 символов</span>
+              <span className="text-xs text-gray-500">Не менее 8 символов</span>
             </label>
 
-            <label className="block space-y-2">
-              <span className="text-sm font-medium text-navy">Повторите пароль</span>
+            <label className="block space-y-1.5">
+              <span className={labelClass}>Повторите пароль</span>
               <input
                 className={inputClass}
                 type="password"
@@ -142,16 +142,16 @@ export default function Page() {
         </div>
 
         <button
-          className="w-full rounded-xl bg-navy py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-navy-hover disabled:opacity-60"
+          className="mt-8 flex h-10 w-full items-center justify-center rounded-lg bg-blue-500 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600 disabled:opacity-60"
           type="submit"
           disabled={loading}
         >
           {loading ? "Регистрация…" : "Зарегистрироваться"}
         </button>
 
-        <p className="text-center text-sm text-[var(--muted)]">
+        <p className="mt-6 text-center text-sm text-gray-500">
           Уже есть аккаунт?{" "}
-          <Link href="/auth/signin" className="font-semibold text-navy underline-offset-4 hover:underline">
+          <Link href="/auth/signin" className="font-semibold text-blue-600 underline-offset-2 hover:underline">
             Войти
           </Link>
         </p>

@@ -7,7 +7,9 @@ import { useSearchParams } from "next/navigation";
 import { FormEvent, Suspense, useState } from "react";
 
 const inputClass =
-  "w-full rounded-xl border border-[var(--border)] bg-slate-50/80 px-4 py-3 text-sm text-navy outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200/80";
+  "h-10 w-full rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20";
+
+const labelClass = "text-sm font-medium text-gray-900";
 
 function SignInForm() {
   const router = useRouter();
@@ -41,78 +43,77 @@ function SignInForm() {
   }
 
   return (
-    <section className="space-y-8">
-      <header className="space-y-2 text-left">
-        <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-[2rem]">Вход в систему</h1>
-        <p className="text-sm leading-relaxed text-[var(--muted)]">Введите email и пароль, чтобы продолжить обучение.</p>
-      </header>
+    <section className="space-y-6">
+      <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-md shadow-gray-900/5">
+        <div className="mb-8 space-y-2 text-center">
+          <h1 className="text-[32px] font-bold leading-[1.2] tracking-tight text-gray-900">Вход в систему</h1>
+          <p className="text-base leading-relaxed text-gray-500">Введите email и пароль для входа</p>
+        </div>
 
-      {registered ? (
-        <p className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-sm text-teal-900">
-          Регистрация прошла успешно. Войдите с указанным email и паролем.
-        </p>
-      ) : null}
-
-      <form
-        onSubmit={onSubmit}
-        className="space-y-6 rounded-3xl border border-[var(--border)] bg-white p-8 shadow-soft sm:p-9"
-      >
-        {error ? (
-          <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800 ring-1 ring-red-100" role="alert">
-            {error}
+        {registered ? (
+          <p className="mb-6 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-center text-sm text-emerald-900">
+            Регистрация прошла успешно. Войдите с указанным email и паролем.
           </p>
         ) : null}
 
-        <label className="block space-y-2">
-          <span className="text-sm font-medium text-navy">Email</span>
-          <input
-            className={inputClass}
-            placeholder="name@example.com"
-            type="email"
-            name="email"
-            autoComplete="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
+        <form onSubmit={onSubmit} className="space-y-4">
+          {error ? (
+            <p className="rounded-lg bg-red-50 px-3 py-2.5 text-sm text-red-800 ring-1 ring-red-100" role="alert">
+              {error}
+            </p>
+          ) : null}
 
-        <label className="block space-y-2">
-          <span className="text-sm font-medium text-navy">Пароль</span>
-          <input
-            className={inputClass}
-            type="password"
-            name="password"
-            autoComplete="current-password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+          <label className="block space-y-1.5">
+            <span className={labelClass}>Email</span>
+            <input
+              className={inputClass}
+              placeholder="name@example.com"
+              type="email"
+              name="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
 
-        <button
-          className="w-full rounded-xl bg-navy py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-navy-hover disabled:opacity-60"
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Вход…" : "Войти"}
-        </button>
+          <label className="block space-y-1.5">
+            <span className={labelClass}>Пароль</span>
+            <input
+              className={inputClass}
+              type="password"
+              name="password"
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 text-sm text-[var(--muted)]">
-          <span className="font-medium">Забыли пароль?</span>
-          <span className="hidden sm:inline">·</span>
-          <Link href="/auth/signup" className="font-semibold text-navy underline-offset-4 hover:underline">
-            Регистрация
-          </Link>
-        </div>
-      </form>
+          <button
+            className="mt-2 flex h-10 w-full items-center justify-center rounded-lg bg-blue-500 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600 disabled:opacity-60"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Вход…" : "Войти"}
+          </button>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 pt-2 text-sm text-gray-500">
+            <span className="font-medium">Забыли пароль?</span>
+            <span className="text-gray-300">·</span>
+            <Link href="/auth/signup" className="font-semibold text-blue-600 underline-offset-2 hover:underline">
+              Регистрация
+            </Link>
+          </div>
+        </form>
+      </div>
     </section>
   );
 }
 
 export default function Page() {
   return (
-    <Suspense fallback={<div className="py-12 text-center text-sm text-[var(--muted)]">Загрузка…</div>}>
+    <Suspense fallback={<div className="py-12 text-center text-sm text-gray-500">Загрузка…</div>}>
       <SignInForm />
     </Suspense>
   );
