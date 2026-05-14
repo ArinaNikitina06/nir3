@@ -51,7 +51,7 @@ export function RecommendationSection({
 
   return (
     <section className="space-y-4">
-      <h2 className="text-lg font-semibold text-navy">{title}</h2>
+      <h2 className="text-xl font-bold text-navy">{title}</h2>
 
       {loading && <p className="text-sm text-[var(--muted)]">Загрузка…</p>}
       {error && (
@@ -65,7 +65,7 @@ export function RecommendationSection({
             <div className="-mx-1 flex gap-4 overflow-x-auto px-1 pb-2 pt-0.5">
               {data.map((course) => (
                 <div key={course.id} className="shrink-0">
-                  <CourseStripCard course={course} />
+                  <CourseStripCard course={course} recommended={!!course.recommendation} />
                   {course.recommendation?.reasons?.length ? (
                     <p className="mt-2 max-w-[280px] text-xs text-[var(--muted)] line-clamp-2">
                       {course.recommendation.reasons.join(" · ")}
@@ -78,7 +78,7 @@ export function RecommendationSection({
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {data.map((course) => (
                 <div key={course.id} className="min-w-0">
-                  <CourseCard course={course} />
+                  <CourseCard course={course} recommended={!!course.recommendation} />
                   {course.recommendation?.reasons?.length ? (
                     <div className="mt-2 text-xs text-[var(--muted)]">
                       <div className="font-medium text-slate-600">Почему рекомендовано</div>

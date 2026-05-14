@@ -14,14 +14,14 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? "";
 
   return (
-    <div className="min-h-dvh bg-white">
-      <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-white/95 backdrop-blur-sm">
+    <div className="min-h-dvh bg-[var(--page-bg)]">
+      <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-white/90 shadow-sm backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-3 sm:gap-6">
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
-            <span className="grid size-10 place-items-center rounded-xl bg-navy text-white shadow-sm">
+            <span className="grid size-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white shadow-md shadow-primary/25">
               <IconGradCap className="size-5" />
             </span>
-            <span className="text-lg font-semibold tracking-tight text-navy">EduFlow</span>
+            <span className="text-lg font-bold tracking-tight text-navy">EduFlow</span>
           </Link>
 
           <nav className="order-3 flex w-full gap-1 sm:order-none sm:flex sm:w-auto sm:gap-1">
@@ -36,7 +36,9 @@ export function AppShell({ children }: { children: ReactNode }) {
                   key={href}
                   href={href}
                   className={`rounded-lg px-3 py-2 text-sm font-medium transition sm:px-3.5 ${
-                    active ? "bg-slate-100 text-navy" : "text-[var(--muted)] hover:bg-slate-50 hover:text-navy"
+                    active
+                      ? "bg-blue-50 font-semibold text-primary"
+                      : "text-[var(--muted)] hover:bg-slate-100 hover:text-navy"
                   }`}
                 >
                   {label}
@@ -48,23 +50,23 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-2 sm:max-w-sm">
             <label className="relative hidden min-w-0 flex-1 md:block">
               <span className="sr-only">Поиск</span>
-              <IconSearch className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
+              <IconSearch className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[var(--muted)]" />
               <input
                 type="search"
                 placeholder="Поиск курсов…"
-                className="w-full rounded-xl border border-[var(--border)] bg-slate-50 py-2.5 pl-10 pr-3 text-sm text-navy outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
+                className="w-full rounded-lg border border-[var(--border)] bg-white py-2.5 pl-10 pr-3 text-sm text-navy outline-none transition placeholder:text-[var(--muted)] focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </label>
             <button
               type="button"
-              className="grid size-10 shrink-0 place-items-center rounded-xl border border-[var(--border)] bg-white text-slate-600 hover:bg-slate-50"
+              className="grid size-10 shrink-0 place-items-center rounded-lg border border-[var(--border)] bg-white text-[var(--muted)] hover:bg-slate-50"
               aria-label="Уведомления"
             >
               <IconBell className="size-[18px]" />
             </button>
             <Link
               href="/profile"
-              className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--border)] bg-slate-200 text-xs font-semibold text-navy hover:border-slate-300"
+              className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--border)] bg-gradient-to-br from-slate-100 to-slate-200 text-xs font-bold text-navy hover:border-primary/40"
               aria-label="Профиль"
             >
               <span className="text-[11px]">АН</span>

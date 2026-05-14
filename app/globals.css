@@ -2,17 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Токены как в разделе про макет (NIR_Текст_работы_ФИНАЛ.md):
+ * primary #3b82f6, secondary #8b5cf6, фон #f9fafb, текст #111827 / вторичный #6b7280
+ */
 :root {
   color-scheme: light;
-  --surface: #f8fafc;
+  --page-bg: #f9fafb;
   --surface-elevated: #ffffff;
-  --border: #e2e8f0;
-  --navy: #1e293b;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary: #8b5cf6;
+  /* legacy «navy» = цвет текста из макета (не синий CTA) */
+  --navy: #111827;
   --navy-hover: #0f172a;
-  --muted: #64748b;
+  --surface: #f3f4f6;
+  --success: #10b981;
+  --warning: #f59e0b;
 }
 
 body {
-  @apply antialiased text-slate-900;
-  background: var(--surface-elevated);
+  @apply antialiased;
+  color: var(--text);
+  background: var(--page-bg);
 }

@@ -100,7 +100,7 @@ export function AllCoursesPage() {
   return (
     <section className="space-y-8">
       <div className="space-y-1">
-        <h1 className="text-3xl font-semibold text-navy sm:text-4xl">Каталог курсов</h1>
+        <h1 className="text-[2rem] font-bold leading-tight tracking-tight text-navy sm:text-[2rem]">Каталог курсов</h1>
         <p className="text-[var(--muted)]">Выберите направление и начните учиться в удобном темпе.</p>
       </div>
 
@@ -125,7 +125,7 @@ export function AllCoursesPage() {
                 onClick={() => setCategory(key)}
                 className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
                   active
-                    ? "border-navy bg-navy text-white"
+                    ? "border-primary bg-primary text-white shadow-sm"
                     : "border-[var(--border)] bg-white text-navy hover:bg-slate-50"
                 }`}
               >

@@ -42,7 +42,7 @@ export default function Page() {
 
   if (status === "loading") {
     return (
-      <p className="rounded-2xl border border-[var(--border)] bg-white p-8 text-center text-sm text-[var(--muted)] shadow-soft">
+      <p className="rounded-xl border border-[var(--border)] bg-white p-8 text-center text-sm text-[var(--muted)] shadow-card">
         Загрузка профиля…
       </p>
     );
@@ -50,7 +50,7 @@ export default function Page() {
 
   return (
     <>
-      <section className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-soft sm:p-8">
+      <section className="rounded-xl border border-[var(--border)] bg-white p-6 shadow-card sm:p-8">
         <h2 className="text-lg font-semibold text-navy">Профиль</h2>
         <p className="mt-1 text-sm text-[var(--muted)]">
           Так вас будут видеть другие пользователи на сайте.
@@ -114,7 +114,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-soft sm:p-8">
+      <section className="rounded-xl border border-[var(--border)] bg-white p-6 shadow-card sm:p-8">
         <h2 className="text-lg font-semibold text-navy">Цели обучения</h2>
         <p className="mt-1 text-sm text-[var(--muted)]">Настройте свои рекомендации.</p>
 
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-slate-50 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-slate-50 p-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <div className="text-sm font-semibold text-navy">Персонализированные рекомендации</div>
               <div className="mt-1 text-sm text-[var(--muted)]">
@@ -186,7 +186,7 @@ export default function Page() {
               aria-label="Переключатель персонализации"
               className={[
                 "relative h-8 w-14 shrink-0 rounded-full border transition-colors",
-                personalized ? "border-navy bg-navy" : "border-[var(--border)] bg-slate-200",
+                personalized ? "border-primary bg-primary" : "border-[var(--border)] bg-slate-200",
               ].join(" ")}
               onClick={() => setPersonalized((v) => !v)}
             >
@@ -202,7 +202,7 @@ export default function Page() {
           <div className="flex justify-end pt-2">
             <button
               type="button"
-              className="rounded-xl bg-navy px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-hover"
+              className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover"
             >
               Сохранить изменения
             </button>

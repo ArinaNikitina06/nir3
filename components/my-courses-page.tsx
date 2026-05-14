@@ -47,7 +47,7 @@ export function MyCoursesPage() {
   return (
     <section className="space-y-8">
       <div className="space-y-1">
-        <h1 className="text-3xl font-semibold text-navy sm:text-4xl">Моё обучение</h1>
+        <h1 className="text-[2rem] font-bold leading-tight tracking-tight text-navy sm:text-[2rem]">Моё обучение</h1>
         <p className="text-[var(--muted)]">Продолжайте с того места, где остановились.</p>
       </div>
 
@@ -67,12 +67,12 @@ export function MyCoursesPage() {
                 type="button"
                 onClick={() => setTab(key)}
                 className={`relative pb-3 text-sm font-medium transition ${
-                  active ? "text-navy" : "text-[var(--muted)] hover:text-navy"
+                  active ? "font-semibold text-primary" : "text-[var(--muted)] hover:text-navy"
                 }`}
               >
                 {label}
                 {active ? (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-navy" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
                 ) : null}
               </button>
             );
@@ -81,7 +81,7 @@ export function MyCoursesPage() {
       </div>
 
       {tab === "completed" ? (
-        <p className="rounded-2xl border border-dashed border-[var(--border)] bg-slate-50 py-12 text-center text-sm text-[var(--muted)]">
+        <p className="rounded-xl border border-dashed border-[var(--border)] bg-white py-12 text-center text-sm text-[var(--muted)] shadow-sm">
           Завершённых курсов пока нет — загляните в{" "}
           <Link href="/courses" className="font-semibold text-navy underline">
             каталог
@@ -95,7 +95,7 @@ export function MyCoursesPage() {
             return (
               <article
                 key={`${tab}-${course.id}`}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-soft"
+                className="flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-card transition-shadow hover:shadow-lg"
               >
                 <div className="relative aspect-[16/10] bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -112,12 +112,15 @@ export function MyCoursesPage() {
                       <span>{progress}%</span>
                     </div>
                     <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
-                      <div className="h-full rounded-full bg-navy" style={{ width: `${progress}%` }} />
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-secondary"
+                        style={{ width: `${progress}%` }}
+                      />
                     </div>
                   </div>
                   <Link
                     href={`/courses/${course.id}`}
-                    className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-navy py-2.5 text-sm font-semibold text-white transition hover:bg-navy-hover"
+                    className="mt-5 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover"
                   >
                     Продолжить
                   </Link>

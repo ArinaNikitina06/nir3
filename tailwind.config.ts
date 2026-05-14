@@ -17,13 +17,23 @@ export default {
         ]
       },
       colors: {
+        /** CTA / акценты — синий из макета */
+        primary: {
+          DEFAULT: "var(--primary)",
+          hover: "var(--primary-hover)"
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)"
+        },
+        /** Заголовки и основной текст (#111827) */
         navy: {
           DEFAULT: "var(--navy)",
           hover: "var(--navy-hover)"
         }
       },
       boxShadow: {
-        soft: "0 1px 3px rgb(15 23 42 / 0.06), 0 8px 24px rgb(15 23 42 / 0.04)"
+        soft: "0 1px 2px rgb(17 24 39 / 0.05), 0 4px 16px rgb(59 130 246 / 0.06)",
+        card: "0 1px 3px rgb(17 24 39 / 0.06), 0 8px 24px rgb(17 24 39 / 0.06)"
       }
     }
   },

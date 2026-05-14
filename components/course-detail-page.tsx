@@ -218,7 +218,7 @@ export function CourseDetailPage({ courseId }: { courseId: string }) {
         <div className="min-w-0 space-y-8">
           <header className="space-y-4">
             <p className="text-sm font-medium text-[var(--muted)]">{course.category}</p>
-            <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl lg:text-[2.25rem] lg:leading-tight">
+            <h1 className="text-[2rem] font-bold leading-tight tracking-tight text-navy sm:text-[2rem] lg:text-[2.25rem] lg:leading-tight">
               {course.title}
             </h1>
             <p className="text-lg leading-relaxed text-[var(--muted)]">{course.description}</p>
@@ -252,7 +252,7 @@ export function CourseDetailPage({ courseId }: { courseId: string }) {
           </header>
 
           <div className="space-y-4 border-t border-[var(--border)] pt-8">
-            <h2 className="text-xl font-semibold text-navy">О курсе</h2>
+            <h2 className="text-2xl font-bold leading-snug text-navy">О курсе</h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[var(--muted)]">
               {detail.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -261,8 +261,8 @@ export function CourseDetailPage({ courseId }: { courseId: string }) {
           </div>
 
           <div className="space-y-4 border-t border-[var(--border)] pt-8">
-            <h2 className="text-xl font-semibold text-navy">Программа курса</h2>
-            <ul className="divide-y divide-[var(--border)] overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-soft">
+            <h2 className="text-2xl font-bold leading-snug text-navy">Программа курса</h2>
+            <ul className="divide-y divide-[var(--border)] overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-card">
               {detail.modules.map((m, i) => (
                 <li key={i} className="flex items-start justify-between gap-4 px-5 py-4">
                   <div className="min-w-0">
@@ -278,7 +278,7 @@ export function CourseDetailPage({ courseId }: { courseId: string }) {
           </div>
 
           <div className="space-y-4 border-t border-[var(--border)] pt-8">
-            <h2 className="text-xl font-semibold text-navy">Кому подойдёт</h2>
+            <h2 className="text-2xl font-bold leading-snug text-navy">Кому подойдёт</h2>
             <ul className="list-inside list-disc space-y-2 text-[15px] text-[var(--muted)]">
               {detail.audience.map((line, i) => (
                 <li key={i}>{line}</li>
@@ -288,13 +288,13 @@ export function CourseDetailPage({ courseId }: { courseId: string }) {
         </div>
 
         <aside className="lg:sticky lg:top-24">
-          <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-soft">
+          <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-card">
             <div className="relative aspect-video bg-slate-900">
               {course.imageUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img alt="" src={course.imageUrl} className="h-full w-full object-cover opacity-90" />
               ) : null}
-              <div className="absolute inset-0 flex items-center justify-center bg-navy/35">
+              <div className="absolute inset-0 flex items-center justify-center bg-primary/30">
                 <button
                   type="button"
                   className="grid size-16 place-items-center rounded-full bg-white/95 text-navy shadow-lg transition hover:scale-105"
@@ -318,7 +318,7 @@ export function CourseDetailPage({ courseId }: { courseId: string }) {
 
               <button
                 type="button"
-                className="w-full rounded-xl bg-navy py-3.5 text-sm font-semibold text-white transition hover:bg-navy-hover"
+                className="w-full rounded-lg bg-primary py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover"
               >
                 Записаться на курс
               </button>

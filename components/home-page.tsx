@@ -20,14 +20,16 @@ export function HomePage() {
   return (
     <div className="space-y-10">
       <header className="space-y-1">
-        <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">Доброе утро, Арина</h1>
+        <h1 className="text-[2rem] font-bold leading-tight tracking-tight text-navy sm:text-[2rem]">
+          Доброе утро, Арина
+        </h1>
         <p className="text-[var(--muted)]">Готовы продолжить обучение сегодня?</p>
       </header>
 
       <section className="space-y-4">
-        <h2 className="text-lg font-semibold text-navy">Продолжить обучение</h2>
+        <h2 className="text-xl font-bold text-navy">Продолжить обучение</h2>
 
-        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-soft">
+        <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-card transition-shadow hover:shadow-lg">
           <div className="flex flex-col md:flex-row">
             <Link
               href={`/courses/${continueCourse.id}`}
@@ -55,13 +57,13 @@ export function HomePage() {
                   <span>65%</span>
                 </div>
                 <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
-                  <div className="h-full w-[65%] rounded-full bg-navy" />
+                  <div className="h-full w-[65%] rounded-full bg-gradient-to-r from-primary to-secondary" />
                 </div>
               </div>
               <div>
                 <Link
                   href={`/courses/${continueCourse.id}`}
-                  className="inline-flex items-center justify-center rounded-xl bg-navy px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-hover"
+                  className="inline-flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover"
                 >
                   Продолжить
                 </Link>
