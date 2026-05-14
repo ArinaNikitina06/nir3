@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { hashPassword } from "@/lib/password";
@@ -46,8 +47,17 @@ export async function POST(req: Request) {
     return NextResponse.json(user, { status: 201 });
   } catch (e) {
     console.error("[signup]", e);
+    if (e instanceof Prisma.PrismaClientKnownRequestError && e.code === "P2002") {
+      return NextResponse.json(
+        { error: "Пользователь с таким email уже зарегистрирован" },
+        { status: 409 }
+      );
+    }
     return NextResponse.json(
-      { error: "Не удалось зарегистрироваться. Проверьте подключение к базе данных." },
+      {
+        error:
+          "Не удалось зарегистрироваться: база данных недоступна. Запустите PostgreSQL, в .env.local укажите корректный DATABASE_URL, затем в папке проекта выполните: npx prisma db push",
+      },
       { status: 500 }
     );
   }
