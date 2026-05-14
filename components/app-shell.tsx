@@ -11,7 +11,7 @@ const nav = [
 ];
 
 export function AppShell({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
 
   if (pathname.startsWith("/auth")) {
     return <>{children}</>;

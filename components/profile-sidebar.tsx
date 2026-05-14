@@ -17,7 +17,7 @@ function isActive(pathname: string, href: string) {
 }
 
 export function ProfileSidebar() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
 
   return (
     <nav className="flex flex-col gap-2 rounded-2xl border border-[var(--border)] bg-white p-2 shadow-soft">
