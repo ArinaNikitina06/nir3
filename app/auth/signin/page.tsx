@@ -6,6 +6,9 @@ import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { FormEvent, Suspense, useState } from "react";
 
+const inputClass =
+  "w-full rounded-xl border border-[var(--border)] bg-slate-50/80 px-4 py-3 text-sm text-navy outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200/80";
+
 function SignInForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -38,40 +41,24 @@ function SignInForm() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-md space-y-8">
-      <div className="space-y-3 text-center">
-        <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-navy text-white shadow-soft">
-          <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden>
-            <path
-              d="M4 10 12 6l8 4-8 4-8-4Z"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M8 12v4.5c0 1.5 2.5 2.5 4 2.5s4-1 4-2.5V12"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-        <h1 className="text-2xl font-semibold text-navy">Вход в систему</h1>
-        <p className="text-sm text-[var(--muted)]">Введите свои данные для входа</p>
-      </div>
+    <section className="space-y-8">
+      <header className="space-y-2 text-left">
+        <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-[2rem]">Вход в систему</h1>
+        <p className="text-sm leading-relaxed text-[var(--muted)]">Введите email и пароль, чтобы продолжить обучение.</p>
+      </header>
 
       {registered ? (
-        <p className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-center text-sm text-teal-900">
+        <p className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-sm text-teal-900">
           Регистрация прошла успешно. Войдите с указанным email и паролем.
         </p>
       ) : null}
 
       <form
         onSubmit={onSubmit}
-        className="space-y-5 rounded-2xl border border-[var(--border)] bg-white p-8 shadow-soft"
+        className="space-y-6 rounded-3xl border border-[var(--border)] bg-white p-8 shadow-soft sm:p-9"
       >
         {error ? (
-          <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
+          <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800 ring-1 ring-red-100" role="alert">
             {error}
           </p>
         ) : null}
@@ -79,7 +66,7 @@ function SignInForm() {
         <label className="block space-y-2">
           <span className="text-sm font-medium text-navy">Email</span>
           <input
-            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm text-navy outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
+            className={inputClass}
             placeholder="name@example.com"
             type="email"
             name="email"
@@ -93,7 +80,7 @@ function SignInForm() {
         <label className="block space-y-2">
           <span className="text-sm font-medium text-navy">Пароль</span>
           <input
-            className="w-full rounded-xl border border-[var(--border)] bg-slate-50 px-4 py-3 text-sm text-navy outline-none transition focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200"
+            className={inputClass}
             type="password"
             name="password"
             autoComplete="current-password"
@@ -104,16 +91,17 @@ function SignInForm() {
         </label>
 
         <button
-          className="w-full rounded-xl bg-navy py-3 text-sm font-semibold text-white transition hover:bg-navy-hover disabled:opacity-60"
+          className="w-full rounded-xl bg-navy py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-navy-hover disabled:opacity-60"
           type="submit"
           disabled={loading}
         >
           {loading ? "Вход…" : "Войти"}
         </button>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
-          <span className="font-medium text-[var(--muted)]">Забыли пароль?</span>
-          <Link href="/auth/signup" className="font-semibold text-navy hover:underline">
+        <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 text-sm text-[var(--muted)]">
+          <span className="font-medium">Забыли пароль?</span>
+          <span className="hidden sm:inline">·</span>
+          <Link href="/auth/signup" className="font-semibold text-navy underline-offset-4 hover:underline">
             Регистрация
           </Link>
         </div>
@@ -124,7 +112,7 @@ function SignInForm() {
 
 export default function Page() {
   return (
-    <Suspense fallback={<div className="mx-auto max-w-md py-12 text-center text-sm text-[var(--muted)]">Загрузка…</div>}>
+    <Suspense fallback={<div className="py-12 text-center text-sm text-[var(--muted)]">Загрузка…</div>}>
       <SignInForm />
     </Suspense>
   );

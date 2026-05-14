@@ -14,11 +14,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   if (pathname.startsWith("/auth")) {
-    return (
-      <div className="min-h-dvh bg-slate-50">
-        <div className="mx-auto flex min-h-dvh max-w-lg flex-col justify-center px-4 py-12">{children}</div>
-      </div>
-    );
+    return <>{children}</>;
   }
 
   return (
