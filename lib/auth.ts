@@ -18,24 +18,29 @@ export const authOptions: NextAuthOptions = {
 
         const email = credentials.email.trim().toLowerCase();
 
-        const user = await prisma.user.findUnique({
-          where: { email },
-        });
+        try {
+          const user = await prisma.user.findUnique({
+            where: { email },
+          });
 
-        if (!user?.passwordHash) {
+          if (!user?.passwordHash) {
+            return null;
+          }
+
+          const ok = await verifyPassword(credentials.password, user.passwordHash);
+          if (!ok) {
+            return null;
+          }
+
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+          };
+        } catch (e) {
+          console.error("[next-auth authorize]", e);
           return null;
         }
-
-        const ok = await verifyPassword(credentials.password, user.passwordHash);
-        if (!ok) {
-          return null;
-        }
-
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-        };
       },
     }),
   ],
