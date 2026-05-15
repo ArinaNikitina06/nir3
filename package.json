@@ -8,7 +8,11 @@
     "dev:3001": "next dev --hostname 127.0.0.1 --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:push": "sh -c 'set -a && . ./.env.local && set +a && prisma db push'",
+    "db:setup": "docker compose up -d db && npm run db:push"
   },
   "dependencies": {
     "@prisma/client": "^6.3.1",
